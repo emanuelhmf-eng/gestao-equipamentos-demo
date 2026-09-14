@@ -1,0 +1,125 @@
+<div class="pagina">
+
+    <div class="titulo-pagina">
+
+        <h1>Equipamentos</h1>
+
+        <button id="btnNovoEquipamento">
+
+            + Novo Equipamento
+
+        </button>
+
+    </div>
+
+    <div class="barra-pesquisa">
+
+        <input
+            id="pesquisaEquipamento"
+            type="text"
+            placeholder="Pesquisar patrimônio, modelo, série ou categoria">
+
+    </div>
+
+    <div id="formEquipamento" class="formulario">
+
+        <div class="linha">
+
+            <select id="categoria">
+
+                <option value="">Categoria</option>
+
+                <option>ARMA LONGA</option>
+                <option>ARMA CURTA</option>
+                <option>MUNIÇÃO</option>
+                <option>COLETE</option>
+                <option>RÁDIO</option>
+                <option>ALGEMA</option>
+                <option>ESPARGIDOR</option>
+                <option>OUTROS</option>
+
+            </select>
+
+            <input id="fabricante" placeholder="Fabricante">
+
+            <input id="modelo" placeholder="Modelo">
+
+        </div>
+
+        <div class="linha">
+
+            <input id="calibre" placeholder="Calibre">
+
+            <input id="patrimonio" placeholder="Patrimônio">
+
+            <input id="numeroSerie" placeholder="Prefixo / número de série">
+
+        </div>
+
+        <div class="linha">
+
+            <input id="localizacao" placeholder="Localização">
+
+            <input id="quantidade" type="number" value="1">
+
+        </div>
+
+        <div class="linha">
+
+            <textarea
+                id="observacao"
+                placeholder="Observações"></textarea>
+
+        </div>
+
+        <div class="botoes">
+
+            <button
+            id="btnSalvarEquipamento"
+            class="btn-salvar">
+
+            Salvar
+
+            </button>
+
+            <button
+            id="btnCancelarEquipamento"
+            class="btn-cancelar">
+
+            Cancelar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <table class="tabela">
+
+        <thead>
+
+            <tr>
+
+                <th>Categoria</th>
+
+                <th>Modelo</th>
+
+                <th>Patrimônio</th>
+
+                <th>Prefixo / número de série</th>
+
+                <th>Status</th>
+
+                <th>Ações</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tabelaEquipamentos">
+
+        </tbody>
+
+    </table>
+
+</div>

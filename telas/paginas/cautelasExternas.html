@@ -1,0 +1,24 @@
+<section class="pagina paginaNovaCautela paginaCautelaExterna">
+  <div class="titulo-pagina cabecalhoNovaCautela"><div><h1>Cautelas externas</h1><p>Emita cautelas para policiais de outras unidades.</p></div><span class="etapaCautela"><i class="fa-solid fa-building-shield"></i> Atendimento externo</span></div>
+  <section class="secaoNovaCautela"><div class="cabecalhoSecaoCautela"><span class="numeroEtapaCautela">1</span><div><h2>Identificação do policial externo</h2><p>Todos os campos são obrigatórios, exceto e-mail.</p></div></div>
+    <div class="formularioExternoCautela">
+      <label><span>Matrícula *</span><input id="externaMatricula"></label><label class="campoLargo"><span>Nome completo *</span><input id="externaNomeCompleto"></label><label><span>Nome de guerra *</span><input id="externaNomeGuerra"></label>
+      <label><span>Graduação *</span><input id="externaGraduacao"></label><label><span>Unidade de origem *</span><input id="externaUnidade"></label><label><span>Telefone *</span><input id="externaTelefone"></label><label><span>E-mail</span><input id="externaEmail" type="email"></label>
+      <label class="campoLargo"><span>Motivo da cautela *</span><textarea id="externaMotivo" rows="3"></textarea></label>
+    </div>
+  </section>
+  <section class="secaoNovaCautela"><div class="cabecalhoSecaoCautela"><span class="numeroEtapaCautela">2</span><div><h2>Autorização</h2><p>Os dados de solicitação e autorização são opcionais.</p></div></div>
+    <div class="formularioExternoCautela"><label><span>Autoridade solicitante</span><input id="externaAutoridade" placeholder="Opcional"></label><label><span>Responsável que autorizou</span><input id="externaResponsavel" placeholder="Opcional"></label></div>
+  </section>
+
+  <div class="gradeOperacaoNovaCautela gradeOperacaoCautelaExterna">
+  <section class="secaoNovaCautela secaoEquipamentosNovaCautela"><div class="cabecalhoSecaoCautela"><span class="numeroEtapaCautela">3</span><div><h2>Equipamentos disponíveis</h2><p>Pesquise e marque os itens que serão cautelados.</p></div></div>
+    <div class="campoComIcone pesquisaCautela"><i class="fa-solid fa-filter"></i><input id="pesquisaEquipamentoExterno" placeholder="Filtrar categoria, modelo, patrimônio, prefixo ou série"></div><div id="listaEquipamentosExternos" class="listaEquipamentosCautela"></div>
+  </section>
+  <section class="secaoNovaCautela secaoSelecionadosNovaCautela"><div class="cabecalhoSecaoCautela"><span class="numeroEtapaCautela">4</span><div><h2>Itens selecionados</h2><p>Confira os equipamentos antes de emitir.</p></div><span id="totalSelecionadosExternos" class="totalSelecionadosCautela">0 itens</span></div>
+    <div id="listaSelecionadosExternos" class="listaSelecionadosCautela"></div><label class="campoObservacaoCautela"><span>Observação</span><textarea id="externaObservacao" maxlength="1000" placeholder="Observação opcional"></textarea></label>
+    <div class="rodapeNovaCautela"><span><i class="fa-solid fa-lock"></i> A senha do armeiro logado será solicitada.</span><button id="btnEmitirExterna" class="botaoPrincipal"><i class="fa-solid fa-file-signature"></i> Emitir cautela externa</button></div>
+  </section>
+  </div>
+</section>
+<div id="modalSenhaExterna" class="modal modalCautela oculto"><div class="janelaModal"><div class="cabecalhoModal"><div><h2>Confirmar cautela externa</h2><p>Autorização do armeiro logado</p></div><button id="fecharSenhaExterna">&times;</button></div><div class="corpoConfirmacaoCautela"><span class="iconeConfirmacaoCautela"><i class="fa-solid fa-key"></i></span><label><span>Senha do armeiro</span><input id="senhaArmeiroExterna" type="password" autocomplete="current-password"></label><span id="erroSenhaExterna" class="erroConfirmacaoCautela"></span></div><div class="rodapeModal"><button id="cancelarSenhaExterna">Cancelar</button><button id="confirmarExterna">Confirmar e emitir</button></div></div></div>

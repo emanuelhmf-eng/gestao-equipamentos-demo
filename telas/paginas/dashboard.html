@@ -1,0 +1,310 @@
+
+
+            <!--====================================================
+            CABEÇALHO
+            =====================================================-->
+
+            <section class="cabecalhoPagina">
+
+                <div>
+
+                    <h1>
+
+                        Dashboard
+
+                    </h1>
+
+                    <p>
+
+                        Visão geral do Sistema de Gestão de Cautelas — Demo
+
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!--====================================================
+            CARDS
+            =====================================================-->
+
+            <section class="cardsDashboard">
+
+                <div class="cardDashboard cardArmaLonga">
+
+                    <div class="iconeCard">
+
+                        <i class="fa-solid fa-person-rifle"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Armas Longas
+
+                    </h3>
+
+                    <h1 id="totalArmasLongas">
+
+                        --
+
+                    </h1>
+
+                    <small class="legendaDisponiveisDashboard"><i class="fa-solid fa-circle-check"></i> Somente disponíveis</small>
+
+                    <button>
+
+                        Ver detalhes
+
+                    </button>
+
+                </div>
+
+                <div class="cardDashboard cardArmaCurta">
+
+                    <div class="iconeCard">
+
+                        <i class="fa-solid fa-gun"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Armas Curtas
+
+                    </h3>
+
+                    <h1 id="totalArmasCurtas">
+
+                        --
+
+                    </h1>
+
+                    <small class="legendaDisponiveisDashboard"><i class="fa-solid fa-circle-check"></i> Somente disponíveis</small>
+
+                    <button>
+
+                        Ver detalhes
+
+                    </button>
+
+                </div>
+
+                <div class="cardDashboard cardMunicao">
+
+                    <div class="iconeCard">
+
+                        <i class="fa-solid fa-crosshairs"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Munições
+
+                    </h3>
+
+                    <h1 id="totalMunicoes">
+
+                        --
+
+                    </h1>
+
+                    <small class="legendaDisponiveisDashboard"><i class="fa-solid fa-circle-check"></i> Somente disponíveis</small>
+
+                    <button>
+
+                        Ver detalhes
+
+                    </button>
+
+                </div>
+
+                <div class="cardDashboard cardRadio">
+
+                    <div class="iconeCard">
+
+                        <i class="fa-solid fa-walkie-talkie"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Rádios
+
+                    </h3>
+
+                    <h1 id="totalRadios">
+
+                        --
+
+                    </h1>
+
+                    <small class="legendaDisponiveisDashboard"><i class="fa-solid fa-circle-check"></i> Somente disponíveis</small>
+
+                    <button>
+
+                        Ver detalhes
+
+                    </button>
+
+                </div>
+
+                <div class="cardDashboard cardColete">
+
+                    <div class="iconeCard">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Coletes
+
+                    </h3>
+
+                    <h1 id="totalColetes">
+
+                        --
+
+                    </h1>
+
+                    <small class="legendaDisponiveisDashboard"><i class="fa-solid fa-circle-check"></i> Somente disponíveis</small>
+
+                    <button>
+
+                        Ver detalhes
+
+                    </button>
+
+                </div>
+
+                <div class="cardDashboard cardOutros">
+
+                    <div class="iconeCard">
+
+                        <i class="fa-solid fa-box"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Outros
+
+                    </h3>
+
+                    <h1 id="totalOutros">
+
+                        --
+
+                    </h1>
+
+                    <small class="legendaDisponiveisDashboard"><i class="fa-solid fa-circle-check"></i> Somente disponíveis</small>
+
+                    <button>
+
+                        Ver detalhes
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section class="painelDashboard">
+                    <div class="painel painelCautelasAbertas">
+
+                        <div class="tituloPainel">
+
+                            <div class="tituloCautelas">
+                                <span class="iconeTituloCautelas"><i class="fa-solid fa-hourglass-half"></i></span>
+                                <div><h2>Cautelas em Aberto</h2><p>Itens que ainda aguardam devolução</p></div>
+                            </div>
+                            <div class="acoesCautelas">
+                                <span id="totalCautelasAbertas" class="contadorCautelas">0 em aberto</span>
+                                <button id="btnVerCautelasAbertas" class="botaoSecundario">Ver todas <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+
+                        </div>
+
+                        <div class="tabelaScrollCautelas">
+                        <table id="tabelaCautelas">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Policial</th>
+
+                                    <th>Equipamentos</th>
+
+                                    <th>Retirada</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                            </tbody>
+
+                        </table>
+                        </div>
+
+                        <div class="rodapeCautelas">
+                            <span><i class="fa-solid fa-circle-info"></i> Acompanhe as devoluções pendentes.</span>
+                            <button id="btnNovaCautelaDashboard" class="botaoPrincipal"><i class="fa-solid fa-plus"></i> Nova Cautela</button>
+                        </div>
+
+                    </div>
+
+                    <div class="painel painelAtividadesRecentes">
+
+                    <div class="tituloPainel">
+
+                        <div class="tituloAtividades">
+                            <span class="iconeTituloAtividades"><i class="fa-solid fa-clock-rotate-left"></i></span>
+                            <div>
+                                <h2>Atividades Recentes</h2>
+                                <p>Movimentações registradas hoje</p>
+                            </div>
+                        </div>
+
+                        <span class="periodoAtividades"><i class="fa-regular fa-calendar"></i> Hoje</span>
+
+                    </div>
+
+                    <div id="listaAtividades">
+
+                    </div>
+
+                </div>
+             </section>
+
+             <section class="painel painelRankingArmamentos">
+                <div class="cabecalhoRankingArmamentos">
+                    <div class="tituloRankingArmamentos"><span><i class="fa-solid fa-ranking-star"></i></span><div><h2>Ranking de armamentos</h2><p>Movimentações históricas de armas longas e curtas</p></div></div>
+                    <div class="filtrosRankingArmamentos" role="group" aria-label="Agrupar ranking por">
+                        <button class="ativo" type="button" data-ranking-dimensao="categoria">Categoria</button>
+                        <button type="button" data-ranking-dimensao="modelo">Modelo</button>
+                        <button type="button" data-ranking-dimensao="individual">Individual</button>
+                    </div>
+                </div>
+                <div class="gradeRankingArmamentos">
+                    <section class="colunaRankingArmamentos rankingCautelados"><div class="tituloColunaRanking"><i class="fa-solid fa-clipboard-check"></i><div><h3>Mais cautelados</h3><p>Quantidade de cautelas registradas</p></div></div><div id="rankingArmamentosCautelados" class="listaRankingArmamentos"></div></section>
+                    <section class="colunaRankingArmamentos rankingBaixados"><div class="tituloColunaRanking"><i class="fa-solid fa-box-archive"></i><div><h3>Mais baixados</h3><p>Quantidade de baixas registradas</p></div></div><div id="rankingArmamentosBaixados" class="listaRankingArmamentos"></div></section>
+                </div>
+             </section>
+
+        
+
+   
+
+
+
+
+
+
+

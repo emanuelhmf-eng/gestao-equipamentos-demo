@@ -1,0 +1,26 @@
+<style>
+.videoConfiguracao{grid-column:1/-1}.areaVideoConfiguracao{display:grid;grid-template-columns:minmax(280px,520px) 1fr;align-items:center;gap:20px}.areaVideoConfiguracao video{width:100%;aspect-ratio:16/9;object-fit:contain;border-radius:12px;background:#090b08}.areaVideoConfiguracao>div{display:flex;flex-direction:column;align-items:flex-start;gap:8px}.areaVideoConfiguracao small{color:#877a67}.acoesVideoConfiguracao{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}.areaVideoConfiguracao video.semVideo{display:none}@media(max-width:760px){.areaVideoConfiguracao{grid-template-columns:1fr}}
+</style>
+<section class="pagina paginaConfiguracoes">
+    <div class="titulo-pagina"><div><h1>Configurações</h1><p>Personalize a identificação e as cores usadas em todo o sistema.</p></div></div>
+    <div class="gradeConfiguracoes">
+        <section class="cartaoConfiguracao identidadeConfiguracao">
+            <div class="tituloCartaoConfiguracao"><i class="fa-solid fa-shield-halved"></i><div><h2>Identidade visual</h2><p>Logo e identificação exibidas no menu e nos relatórios.</p></div></div>
+            <div class="areaLogoConfiguracao"><div class="previewLogoConfiguracao"><img id="previewCfgLogo" src="../assets/demo-logo.svg" alt="Pré-visualização da logo"></div><div><label class="botaoArquivoConfiguracao" for="cfgArquivoLogo"><i class="fa-solid fa-image"></i> Escolher nova logo</label><input id="cfgArquivoLogo" type="file" accept="image/png,image/jpeg"><button id="btnRestaurarLogo" class="botaoSecundarioConfiguracao" type="button">Restaurar logo padrão</button><small>Use uma imagem PNG ou JPEG de até 2 MB.</small></div></div>
+            <div class="camposConfiguracao"><label><span>Sigla da unidade</span><input id="cfgBatalhao" placeholder="Ex.: DEMO"></label><label><span>Nome abaixo da logo</span><input id="cfgNomeUnidade" placeholder="Ex.: Sistema de Cautela"></label><label class="campoConfiguracaoAmplo"><span>Órgão de segurança pública nos relatórios</span><input id="cfgOrgaoSeguranca" placeholder="Ex.: Organização Demonstrativa"></label><label class="campoConfiguracaoAmplo"><span>Nome da unidade nos relatórios</span><input id="cfgNomeUnidadeRelatorios" placeholder="Ex.: Unidade Demonstrativa"></label><label><span>Cidade</span><input id="cfgCidade" placeholder="Cidade"></label><label><span>Estado</span><input id="cfgEstado" placeholder="Estado"></label><label><span>Comandante</span><input id="cfgComandante" placeholder="Comandante"></label><label><span>Subcomandante</span><input id="cfgSubcomandante" placeholder="Subcomandante"></label></div>
+        </section>
+        <section class="cartaoConfiguracao temaConfiguracao">
+            <div class="tituloCartaoConfiguracao"><i class="fa-solid fa-palette"></i><div><h2>Cores do tema</h2><p>As alterações são aplicadas em todas as páginas.</p></div></div>
+            <div class="listaCoresConfiguracao"><label><span><b>Cor da barra superior</b><small>Barra onde aparece “Sistema conectado”</small></span><input id="cfgCorBarra" type="color"></label><label><span><b>Cor dos títulos das páginas</b><small>Título principal de cada menu</small></span><input id="cfgCorTitulos" type="color"></label><label><span><b>Cor principal</b><small>Destaques positivos do sistema</small></span><input id="cfgCorPrimaria" type="color"></label><label><span><b>Cor secundária</b><small>Botões, títulos e seleções</small></span><input id="cfgCorSecundaria" type="color"></label><label><span><b>Cor do menu</b><small>Fundo da barra lateral</small></span><input id="cfgCorMenu" type="color"></label><label><span><b>Cor de fundo</b><small>Fundo geral das páginas</small></span><input id="cfgCorFundo" type="color"></label></div>
+            <button id="btnRestaurarTema" class="botaoSecundarioConfiguracao" type="button"><i class="fa-solid fa-rotate-left"></i> Restaurar cores padrão</button>
+        </section>
+        <section class="cartaoConfiguracao videoConfiguracao">
+            <div class="tituloCartaoConfiguracao"><i class="fa-solid fa-film"></i><div><h2>Vídeo de abertura</h2><p>Escolha o vídeo exibido antes da tela de login.</p></div></div>
+            <div class="areaVideoConfiguracao">
+                <video id="previewCfgVideo" muted controls playsinline></video>
+                <div><strong id="nomeCfgVideo">Nenhum vídeo configurado</strong><small>Formatos WebM ou MP4, com até 150 MB.</small><div class="acoesVideoConfiguracao"><button id="btnEscolherVideo" class="botaoArquivoConfiguracao" type="button"><i class="fa-solid fa-folder-open"></i> Escolher vídeo</button><button id="btnRemoverVideo" class="botaoSecundarioConfiguracao" type="button"><i class="fa-solid fa-trash"></i> Sem vídeo</button></div></div>
+            </div>
+        </section>
+    </div>
+    <div class="rodapeConfiguracoes"><span><i class="fa-solid fa-circle-info"></i> A nova identidade também será usada nos PDFs e relatórios.</span><button id="btnSalvarConfiguracoes" type="button"><i class="fa-solid fa-floppy-disk"></i> Salvar configurações</button></div>
+</section>

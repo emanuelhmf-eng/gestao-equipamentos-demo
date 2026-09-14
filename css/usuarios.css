@@ -1,0 +1,513 @@
+.usuarios-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/*=============================
+TÍTULO
+=============================*/
+
+.titulo-pagina{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.titulo-pagina h1{
+
+    font-size:30px;
+
+    color:#38431f;
+
+}
+
+.titulo-pagina span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+#btnNovoUsuario{
+
+    background:#556B2F;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+#btnNovoUsuario:hover{
+
+    background:#3e4f22;
+
+}
+
+/*=============================
+FILTROS
+=============================*/
+
+.barra-filtros{
+
+    display:grid;
+
+    grid-template-columns:
+    2fr
+    1fr
+    1fr
+    1fr
+    1fr;
+
+    gap:15px;
+
+}
+
+.barra-filtros input,
+.barra-filtros select{
+
+    padding:12px;
+
+    border-radius:8px;
+
+    border:1px solid #CCC;
+
+    font-size:14px;
+
+}
+
+/*=============================
+TABELA
+=============================*/
+
+.tabelaUsuarios{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+
+}
+
+.tabelaUsuarios th{
+
+    background:#556B2F;
+
+    color:white;
+
+    padding:15px;
+
+    text-align:left;
+
+}
+
+.tabelaUsuarios td{
+
+    padding:12px;
+
+    border-bottom:1px solid #EEE;
+
+}
+
+.tabelaUsuarios tbody tr{
+
+    transition:.2s;
+
+}
+
+.tabelaUsuarios tbody tr:hover{
+
+    background:#f3f6ef;
+
+}
+.informacoesUsuario{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+}
+
+.informacoesUsuario h3{
+
+    margin:0;
+
+    font-size:30px;
+
+    color:white;
+
+}
+
+.informacoesUsuario span{
+
+    margin-top:3px;
+
+    font-size:15px;
+
+    color:#d7d7d7;
+
+}
+/*=============================
+FOTO
+=============================*/
+
+.fotoTabela{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+/*=============================
+BOTÕES
+=============================*/
+
+.btnEditar{
+
+    background:#3d8bfd;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    margin-right:6px;
+
+}
+
+.btnExcluir{
+
+    background:#dc3545;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+}
+
+/*=============================
+MODAL
+=============================*/
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.oculto{
+
+    display:none;
+
+}
+
+.janelaModal{
+
+    width:900px;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+.cabecalhoModal{
+
+    background:#556B2F;
+
+    color:white;
+
+    padding:20px;
+
+}
+
+.corpoModal{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr;
+
+    gap:30px;
+
+    padding:25px;
+
+}
+
+
+
+
+
+#btnFoto{
+
+    background:#556B2F;
+
+    color:white;
+
+    border:none;
+
+    padding:10px;
+
+    width:170px;
+
+    cursor:pointer;
+
+    border-radius:8px;
+
+}
+
+.formulario{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    border:1px solid #CCC;
+
+    font-size:14px;
+
+}
+
+.formulario textarea{
+
+    grid-column:span 2;
+
+    height:120px;
+
+    resize:none;
+
+}
+
+.rodapeModal{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    padding:20px;
+
+    background:#F4F4F4;
+
+}
+
+.rodapeModal button{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+#btnCancelar{
+
+    background:#999;
+
+    color:white;
+
+}
+
+#btnSalvar{
+
+    background:#556B2F;
+
+    color:white;
+
+}
+
+/* Página de usuários */
+.paginaUsuarios{display:flex;flex-direction:column;gap:20px;max-width:1280px;margin:0 auto}.cabecalhoUsuarios{margin-bottom:2px}.cabecalhoUsuarios h1{margin:0;color:#675536}.cabecalhoUsuarios p{margin:5px 0 0;color:#897b66}.acoesCabecalhoUsuarios{display:flex;align-items:center;gap:10px}.contadorUsuarios{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid #d9cebc;border-radius:999px;background:#fff;color:#716147;font-size:11px;font-weight:750;white-space:nowrap}.paginaUsuarios #btnNovoUsuario{display:flex;align-items:center;gap:8px;padding:10px 15px;border:0;border-radius:9px;background:linear-gradient(135deg,#806c49,#655337);box-shadow:0 5px 13px rgba(69,52,28,.18);color:#fff;font-size:13px;font-weight:750}
+.painelUsuario{overflow:hidden;border:1px solid #ddd2c0;border-radius:15px;background:#fff;box-shadow:0 8px 24px rgba(64,48,26,.08)}.cabecalhoPainelUsuario{display:flex;align-items:center;gap:12px;padding:17px 20px;border-bottom:1px solid #e7dfd2;background:linear-gradient(110deg,#fff 55%,#f6f1e8)}.iconePainelUsuario{width:40px;height:40px;display:grid;place-items:center;flex:none;border-radius:11px;background:#e9e1d2;color:#705e41;font-size:17px}.cabecalhoPainelUsuario h2,.cabecalhoListaUsuarios h2{margin:0;color:#574a37;font-size:17px}.cabecalhoPainelUsuario p,.cabecalhoListaUsuarios p{margin:3px 0 0;color:#8b7d68;font-size:11px}
+.paginaUsuarios .formularioUsuario{display:block;max-width:none;padding:0;border:1px solid #ddd2c0;border-radius:15px}.corpoFormularioUsuario{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px 20px}.secaoFormularioUsuario{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:14px;border:1px solid #e4dccf;border-radius:11px;background:#fcfaf7}.secaoIdentificacaoUsuario{grid-column:1/-1;grid-template-columns:1fr 2fr 1fr}.secaoFormularioUsuario legend{padding:0 6px;color:#705f43;font-size:11px;font-weight:800}.secaoFormularioUsuario legend i{margin-right:5px}.secaoFormularioUsuario label,.campoObservacaoUsuario{display:flex;flex-direction:column;gap:5px}.secaoFormularioUsuario label>span,.campoObservacaoUsuario>span{color:#75664f;font-size:10px;font-weight:750;text-transform:uppercase}.paginaUsuarios .formularioUsuario input,.paginaUsuarios .formularioUsuario select,.paginaUsuarios .formularioUsuario textarea{width:100%;padding:10px 11px;border:1px solid #d7cbb9;border-radius:8px;background:#fff;color:#453d32;font:inherit;outline:none;transition:.18s}.paginaUsuarios .formularioUsuario input:focus,.paginaUsuarios .formularioUsuario select:focus,.paginaUsuarios .formularioUsuario textarea:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.12)}.paginaUsuarios .formularioUsuario input:disabled{background:#eeeae3;color:#887d6d}.campoObservacaoUsuario{grid-column:1/-1}.paginaUsuarios .campoObservacaoUsuario textarea{height:76px;resize:vertical}.rodapeFormularioUsuario{display:flex;justify-content:flex-end;gap:9px;padding:14px 20px;border-top:1px solid #dfd5c6;background:#f5f1e9}.rodapeFormularioUsuario button{display:flex;align-items:center;gap:7px;padding:10px 14px;border:1px solid #cfc1ab;border-radius:8px;background:#fff;color:#655844;font-weight:750;cursor:pointer}.rodapeFormularioUsuario #btnSalvarUsuario{border:0;background:linear-gradient(135deg,#168557,#0f6845);color:#fff;box-shadow:0 5px 12px rgba(15,104,69,.18)}.rodapeFormularioUsuario #btnSalvarUsuario:disabled{opacity:.55;cursor:wait}
+.cabecalhoListaUsuarios{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 20px;border-bottom:1px solid #e1d8c9;background:linear-gradient(110deg,#fff,#f5efe5)}.pesquisaUsuarios{position:relative;width:min(390px,46%)}.pesquisaUsuarios i{position:absolute;top:50%;left:13px;color:#907d5d;transform:translateY(-50%)}.pesquisaUsuarios input{width:100%;padding:10px 12px 10px 37px;border:1px solid #cfc0a8;border-radius:8px;background:#fff;font:inherit;outline:none}.pesquisaUsuarios input:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.12)}.tabelaUsuariosResponsiva{max-height:440px;overflow:auto}.paginaUsuarios .tabelaUsuarios{margin:0;border:0;border-radius:0;box-shadow:none}.paginaUsuarios .tabelaUsuarios th{position:sticky;top:0;z-index:1;padding:11px 12px;background:linear-gradient(180deg,#897757,#725f40);font-size:10px;letter-spacing:.05em;text-transform:uppercase}.paginaUsuarios .tabelaUsuarios td{padding:11px 12px;color:#554b3e;font-size:12px}.identidadeUsuarioTabela{display:flex;align-items:center;gap:9px;min-width:170px}.avatarUsuarioTabela{width:34px;height:34px;display:grid;place-items:center;flex:none;border-radius:50%;background:#e8dfd0;color:#6b593d;font-size:11px;font-weight:850}.identidadeUsuarioTabela>div{display:flex;min-width:0;flex-direction:column;gap:2px}.identidadeUsuarioTabela strong,.identidadeUsuarioTabela small{overflow:hidden;max-width:190px;text-overflow:ellipsis;white-space:nowrap}.identidadeUsuarioTabela small{color:#958875;font-size:9px}.matriculaUsuario{color:#625239}.perfilUsuario,.statusUsuario{display:inline-flex;align-items:center;padding:5px 7px;border-radius:6px;font-size:9px;font-weight:800;white-space:nowrap}.perfilUsuario{background:#eee7db;color:#6d5b3e}.perfilUsuario.perfilADMINISTRADOR{background:#e5e0f1;color:#5d4c87}.perfilUsuario.perfilARMEIRO{background:#fff0d6;color:#886119}.perfilUsuario.perfilCOMANDANTE{background:#e3ebf3;color:#46647d}.perfilUsuario.perfilCONSULTA{background:#edf0e8;color:#5f6d4c}.statusUsuario{gap:5px}.statusUsuario i{font-size:6px}.usuarioAtivo{background:#e4f2e9;color:#26704b}.usuarioInativo{background:#f3e5e2;color:#95463d}.btnEditarUsuario{display:inline-flex;align-items:center;gap:5px;padding:7px 9px;border:1px solid #d2c5b2;border-radius:7px;background:#fff;color:#695a43;font-size:10px;font-weight:750;cursor:pointer}.btnEditarUsuario:hover{background:#776446;color:#fff}.estadoVazioUsuarios{text-align:center!important;padding:35px!important;color:#91836f}.estadoVazioUsuarios i,.estadoVazioUsuarios strong,.estadoVazioUsuarios span{display:block}.estadoVazioUsuarios i{margin-bottom:8px;font-size:22px}.estadoVazioUsuarios strong{color:#645947}.estadoVazioUsuarios span{margin-top:4px;font-size:10px}
+@media(max-width:900px){.corpoFormularioUsuario{grid-template-columns:1fr}.secaoIdentificacaoUsuario{grid-column:auto;grid-template-columns:1fr 1fr}.secaoIdentificacaoUsuario .campoNomeUsuario{grid-column:1/-1}.tabelaUsuariosResponsiva{overflow:auto}.paginaUsuarios .tabelaUsuarios{min-width:950px}}
+@media(max-width:650px){.cabecalhoUsuarios,.cabecalhoListaUsuarios{align-items:flex-start;flex-direction:column}.acoesCabecalhoUsuarios,.pesquisaUsuarios{width:100%}.acoesCabecalhoUsuarios{justify-content:space-between}.secaoFormularioUsuario,.secaoIdentificacaoUsuario{grid-template-columns:1fr}.secaoIdentificacaoUsuario .campoNomeUsuario{grid-column:auto}.rodapeFormularioUsuario{flex-direction:column-reverse}.rodapeFormularioUsuario button{justify-content:center}}
+
+#modalUsuarioExterno{padding:18px}#modalUsuarioExterno .janelaUsuario{display:block;width:min(980px,calc(100vw - 36px));max-height:calc(100vh - 36px);padding:0;overflow:auto;border:1px solid #ddd2c0;border-radius:15px;background:#fff}#modalUsuarioExterno .corpoFormularioUsuario{display:grid;grid-template-columns:1fr;gap:16px;padding:20px 24px;background:#f5f1e9}#modalUsuarioExterno .secaoFormularioUsuario{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:20px;border:1px solid #ddcfba;border-radius:15px;background:#fff;box-shadow:0 5px 15px rgba(79,59,31,.06)}#modalUsuarioExterno .secaoFormularioUsuario legend{float:left;width:100%;margin:0 0 14px;padding:0 0 11px;border-bottom:1px solid #e4d8c6;color:#6b593d;font-size:15px;font-weight:800}#modalUsuarioExterno .secaoFormularioUsuario legend i{width:20px;color:#9a7f52}#modalUsuarioExterno .secaoFormularioUsuario label{display:flex;min-width:0;flex-direction:column;gap:5px}#modalUsuarioExterno .secaoFormularioUsuario label>span{color:#75664f;font-size:12px;font-weight:750;text-transform:none}#modalUsuarioExterno input,#modalUsuarioExterno select{width:100%;min-width:0;height:50px;padding:12px 15px;border:1px solid #d6cbb9;border-radius:8px;background:#fdfcf9;color:#39332b;font:inherit;font-size:14px;outline:none;transition:.18s}#modalUsuarioExterno input:focus,#modalUsuarioExterno select:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.13);background:#fff}#modalUsuarioExterno input:disabled{background:#eeeae3;color:#887d6d}#modalUsuarioExterno .rodapeModal{position:sticky;bottom:0;z-index:2;display:flex;min-height:88px;justify-content:flex-end;gap:9px;padding:18px 30px;border-top:1px solid #d6c9b4;background:#ebe3d6}#modalUsuarioExterno .rodapeModal button{display:flex;min-width:120px;align-items:center;justify-content:center;gap:7px;padding:13px 20px;border:1px solid #cbbda7;border-radius:8px;background:#fff;color:#665a48;font-size:13px;font-weight:750;cursor:pointer}#modalUsuarioExterno #salvarUsuarioExterno{border:0;background:linear-gradient(135deg,#806c49,#665436);color:#fff;box-shadow:0 5px 12px rgba(77,59,33,.2)}#modalUsuarioExterno #salvarUsuarioExterno:disabled{opacity:.55;cursor:wait}@media(max-width:760px){#modalUsuarioExterno{padding:8px}#modalUsuarioExterno .corpoFormularioUsuario{padding:15px}#modalUsuarioExterno .secaoFormularioUsuario{grid-template-columns:1fr}#modalUsuarioExterno .rodapeModal{padding:14px 16px;flex-direction:column-reverse}}
+
+/* Janela de cadastro de usuário no padrão de equipamentos */
+#modalUsuario{z-index:1200;padding:20px;background:rgba(39,32,22,.68);backdrop-filter:blur(3px)}#modalUsuario .janelaUsuario{width:min(920px,calc(100vw - 32px));max-height:90vh;overflow:auto;border:1px solid #a99572;border-radius:16px;background:#fff;box-shadow:0 24px 70px rgba(31,24,14,.35)}
+#modalUsuario .cabecalhoModal{display:flex;align-items:center;justify-content:space-between;padding:19px 24px;background:linear-gradient(120deg,#6e5c3f,#927d58);border-bottom:1px solid #bba986;color:#fff}#modalUsuario .cabecalhoModal h2{margin:0;font-size:19px}#modalUsuario .cabecalhoModal p{margin:4px 0 0;font-size:11px;opacity:.82}#modalUsuario .cabecalhoModal button{border:0;background:transparent;color:#fff;font-size:27px;cursor:pointer}
+#modalUsuario .corpoFormularioUsuario{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 24px;background:#f5f1e9}#modalUsuario .secaoFormularioUsuario{padding:17px;background:#fff;border:1px solid #ded4c4;border-radius:12px;box-shadow:0 4px 13px rgba(71,54,30,.05)}#modalUsuario .secaoIdentificacaoUsuario{grid-column:1/-1}
+#modalUsuario .formularioUsuario input,#modalUsuario .formularioUsuario select,#modalUsuario .formularioUsuario textarea{padding:10px 11px;border:1px solid #d6cbb9;border-radius:8px;background:#fdfcf9;color:#39332b;outline:none;transition:.18s}#modalUsuario .formularioUsuario input:focus,#modalUsuario .formularioUsuario select:focus,#modalUsuario .formularioUsuario textarea:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.13);background:#fff}
+#modalUsuario .campoObservacaoUsuario{grid-column:1/-1;padding:15px;background:#fff;border:1px solid #ded4c4;border-radius:12px}#modalUsuario .rodapeFormularioUsuario{position:sticky;bottom:0;z-index:2;padding:15px 24px;background:#ebe3d6;border-top:1px solid #d6c9b4}#modalUsuario #btnCancelarUsuario{background:#fff;color:#665a48;border:1px solid #cbbda7}#modalUsuario #btnSalvarUsuario{border:0;background:linear-gradient(135deg,#806c49,#665436);color:#fff;box-shadow:0 5px 12px rgba(77,59,33,.2)}
+@media(max-width:760px){#modalUsuario{padding:8px}#modalUsuario .corpoFormularioUsuario{grid-template-columns:1fr;padding:15px}#modalUsuario .secaoIdentificacaoUsuario{grid-column:auto;grid-template-columns:1fr}#modalUsuario .secaoIdentificacaoUsuario .campoNomeUsuario{grid-column:auto}#modalUsuario .campoObservacaoUsuario{grid-column:auto}}
+
+/* Refinamento visual baseado na janela de equipamentos */
+#modalUsuario .janelaUsuario{width:min(1150px,calc(100vw - 48px));border-radius:18px}
+#modalUsuario .janelaUsuario{display:flex;flex-direction:column;overflow:hidden}
+#modalUsuario .cabecalhoModal{min-height:116px;padding:25px 30px;background:#8b7856}
+#modalUsuario .cabecalhoModal h2{font-size:27px;letter-spacing:.01em}
+#modalUsuario .cabecalhoModal p{margin-top:10px;font-size:14px}
+#modalUsuario .cabecalhoModal button{align-self:flex-start;margin-top:4px;font-size:30px}
+#modalUsuario .corpoFormularioUsuario{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;padding:26px 30px;background:#f7f3eb;overflow-y:auto}
+#modalUsuario .corpoFormularioUsuario{align-items:stretch}
+#modalUsuario .secaoFormularioUsuario{grid-column:auto;grid-template-columns:1fr 1fr;gap:15px;padding:20px;border-color:#ddcfba;border-radius:15px;box-shadow:0 5px 15px rgba(79,59,31,.06)}
+#modalUsuario .secaoIdentificacaoUsuario,#modalUsuario .corpoFormularioUsuario>.secaoFormularioUsuario:not(.secaoAcessoUsuario){min-height:250px;align-content:start}
+#modalUsuario .secaoFormularioUsuario legend{float:left;width:100%;margin:0 0 14px;padding:0 0 11px;border-bottom:1px solid #e4d8c6;color:#6b593d;font-size:15px}
+#modalUsuario .secaoFormularioUsuario legend i{width:20px;color:#9a7f52}
+#modalUsuario .secaoFormularioUsuario label>span{font-size:12px;text-transform:none}
+#modalUsuario .secaoIdentificacaoUsuario{grid-column:auto}
+#modalUsuario .secaoIdentificacaoUsuario .campoNomeUsuario{grid-column:auto}
+#modalUsuario .secaoAcessoUsuario{grid-column:1/-1}
+#modalUsuario .secaoAcessoUsuario{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+#modalUsuario .secaoAcessoUsuario .campoObservacaoUsuario{grid-column:1/-1;padding:0;border:0;border-radius:0;box-shadow:none}
+#modalUsuario .formularioUsuario input,#modalUsuario .formularioUsuario select{height:50px;padding:12px 15px;font-size:14px}
+#modalUsuario .formularioUsuario textarea{height:92px;padding:13px 15px;font-size:14px}
+#modalUsuario .secaoFormularioUsuario label{min-width:0}
+#modalUsuario .formularioUsuario input,#modalUsuario .formularioUsuario select,#modalUsuario .formularioUsuario textarea{min-width:0}
+#modalUsuario .rodapeFormularioUsuario{min-height:88px;padding:18px 30px}
+#modalUsuario .rodapeFormularioUsuario button{min-width:120px;justify-content:center;padding:13px 20px;font-size:13px}
+#modalUsuario #btnSalvarUsuario{min-width:190px}
+.paginaUsuarios .listagemUsuarios{border-color:#d8ccb9;border-radius:16px}
+.paginaUsuarios .cabecalhoListaUsuarios{padding:20px 22px;background:#fff}
+.paginaUsuarios .cabecalhoListaUsuarios h2{font-size:19px}
+.paginaUsuarios .tabelaUsuariosResponsiva{
+    max-height:500px;
+    overflow:auto;
+    border-top:1px solid #e5dccd;
+    scrollbar-width:thin;
+    scrollbar-color:#8b7856 #eee7dc;
+    scrollbar-gutter:stable;
+}
+.paginaUsuarios .tabelaUsuariosResponsiva::-webkit-scrollbar{width:11px;height:11px}
+.paginaUsuarios .listagemUsuarios:not(.listagemUsuariosExternos) .tabelaUsuariosResponsiva{max-height:420px;overflow-x:auto;overflow-y:scroll}
+.paginaUsuarios .listagemUsuariosExternos .tabelaUsuariosResponsiva{max-height:360px;overflow-x:auto;overflow-y:scroll}
+.paginaUsuarios .tabelaUsuariosResponsiva::-webkit-scrollbar-track{
+    background:#eee7dc;
+    border-left:1px solid #ddd2c0;
+}
+.paginaUsuarios .tabelaUsuariosResponsiva::-webkit-scrollbar-thumb{
+    min-height:40px;
+    border:3px solid #eee7dc;
+    border-radius:999px;
+    background:#8b7856;
+}
+.paginaUsuarios .tabelaUsuariosResponsiva::-webkit-scrollbar-thumb:hover{background:#6e5c3f}
+.paginaUsuarios .tabelaUsuariosResponsiva::-webkit-scrollbar-corner{background:#eee7dc}
+.paginaUsuarios .tabelaUsuarios{min-width:1040px}
+.paginaUsuarios .tabelaUsuarios{width:100%;table-layout:fixed}
+.paginaUsuarios .tabelaUsuarios .colPolicial{width:24%}.paginaUsuarios .tabelaUsuarios .colGraduacao{width:10%}.paginaUsuarios .tabelaUsuarios .colLotacao{width:18%}.paginaUsuarios .tabelaUsuarios .colContato{width:20%}.paginaUsuarios .tabelaUsuarios .colPerfil{width:12%}.paginaUsuarios .tabelaUsuarios .colStatus{width:8%}.paginaUsuarios .tabelaUsuarios .colAcoes{width:8%}
+.paginaUsuarios .tabelaUsuariosExternos .colExternoPolicial{width:23%}.paginaUsuarios .tabelaUsuariosExternos .colExternoMatricula{width:13%}.paginaUsuarios .tabelaUsuariosExternos .colExternoGraduacao{width:11%}.paginaUsuarios .tabelaUsuariosExternos .colExternoUnidade{width:21%}.paginaUsuarios .tabelaUsuariosExternos .colExternoContato{width:22%}.paginaUsuarios .tabelaUsuariosExternos .colExternoAcoes{width:10%}
+.paginaUsuarios .tabelaUsuarios th{padding:13px 15px;background:#83704f;font-size:10px}
+.paginaUsuarios .tabelaUsuarios td{padding:14px 15px;border-bottom:1px solid #ebe4d9;vertical-align:middle}
+.paginaUsuarios .tabelaUsuarios tbody tr:nth-child(even){background:#fcfaf7}
+.paginaUsuarios .tabelaUsuarios tbody tr:hover{background:#f4eee4}
+.paginaUsuarios .tabelaUsuarios th:first-child,.paginaUsuarios .tabelaUsuarios td:first-child{padding-left:22px}
+.paginaUsuarios .tabelaUsuarios th:last-child,.paginaUsuarios .tabelaUsuarios td:last-child{padding-right:22px;text-align:right}
+.paginaUsuarios .identidadeUsuarioTabela{min-width:235px}.paginaUsuarios .avatarUsuarioTabela{width:42px;height:42px;background:#e9dfcf;font-size:12px}
+.paginaUsuarios .identidadeUsuarioTabela strong{font-size:13px;color:#493f31}.paginaUsuarios .identidadeUsuarioTabela small{max-width:230px;font-size:10px}
+.paginaUsuarios .matriculaUsuario{margin-top:2px;color:#9a8c77;font-size:9px;font-weight:750}
+.dadosAgrupadosUsuario{display:flex;min-width:145px;flex-direction:column;gap:4px}.dadosAgrupadosUsuario strong{color:#5a5042;font-size:11px}.dadosAgrupadosUsuario small{overflow:hidden;max-width:200px;color:#938673;font-size:9px;text-overflow:ellipsis;white-space:nowrap}
+.paginaUsuarios .perfilUsuario,.paginaUsuarios .statusUsuario{padding:6px 9px;border-radius:7px}
+.paginaUsuarios .btnEditarUsuario{padding:8px 11px}
+@media(max-width:760px){
+    #modalUsuario .janelaUsuario{width:calc(100vw - 16px)}
+    #modalUsuario .cabecalhoModal{min-height:auto;padding:20px}
+    #modalUsuario .cabecalhoModal h2{font-size:21px}
+    #modalUsuario .corpoFormularioUsuario{grid-template-columns:1fr;padding:16px}
+    #modalUsuario .secaoFormularioUsuario,#modalUsuario .secaoAcessoUsuario{grid-column:auto;grid-template-columns:1fr}
+    #modalUsuario .secaoIdentificacaoUsuario,#modalUsuario .corpoFormularioUsuario>.secaoFormularioUsuario:not(.secaoAcessoUsuario){min-height:0}
+    #modalUsuario .rodapeFormularioUsuario{padding:14px 16px}
+}
+
+/* Alinhamento dos formulários de edição interno e externo */
+#modalUsuario .secaoFormularioUsuario,#modalUsuarioExterno .secaoFormularioUsuario{align-content:start;grid-auto-rows:auto}
+#modalUsuario .secaoFormularioUsuario legend,#modalUsuarioExterno .secaoFormularioUsuario legend{float:none;grid-column:1/-1;width:100%;box-sizing:border-box}
+#modalUsuario .secaoFormularioUsuario label,#modalUsuarioExterno .secaoFormularioUsuario label{display:grid;grid-template-rows:18px 50px;align-content:start;gap:5px;min-width:0;margin:0}
+#modalUsuario .secaoFormularioUsuario label>span,#modalUsuarioExterno .secaoFormularioUsuario label>span{display:flex;align-items:flex-end;min-width:0;line-height:1.2}
+#modalUsuario .secaoFormularioUsuario input,#modalUsuario .secaoFormularioUsuario select,#modalUsuarioExterno .secaoFormularioUsuario input{display:block;width:100%;max-width:100%;min-width:0;height:50px;margin:0;box-sizing:border-box}
+#modalUsuario .campoObservacaoUsuario{display:flex;grid-template-rows:none}
+
+/* Modal externo com a mesma identidade visual do modal de policial */
+#modalUsuarioExterno{z-index:1200;padding:20px;background:rgba(39,32,22,.68);backdrop-filter:blur(3px)}
+#modalUsuarioExterno .janelaUsuario{display:flex;width:min(1150px,calc(100vw - 48px));max-height:90vh;flex-direction:column;overflow:hidden;border:1px solid #a99572;border-radius:18px;background:#fff;box-shadow:0 24px 70px rgba(31,24,14,.35)}
+#modalUsuarioExterno .cabecalhoModal{display:flex;min-height:116px;align-items:center;justify-content:space-between;padding:25px 30px;border-bottom:1px solid #bba986;background:#8b7856;color:#fff}
+#modalUsuarioExterno .cabecalhoModal h2{margin:0;font-size:27px;letter-spacing:.01em}#modalUsuarioExterno .cabecalhoModal p{margin:10px 0 0;font-size:14px;opacity:.82}#modalUsuarioExterno .cabecalhoModal button{align-self:flex-start;margin-top:4px;border:0;background:transparent;color:#fff;font-size:30px;cursor:pointer}
+#modalUsuarioExterno .corpoFormularioUsuarioExterno{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:20px;padding:26px 30px;overflow-y:auto;background:#f7f3eb}
+#modalUsuarioExterno .secaoFormularioUsuario{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:15px;min-height:250px;padding:20px;border:1px solid #ddcfba;border-radius:15px;background:#fff;box-shadow:0 5px 15px rgba(79,59,31,.06)}
+#modalUsuarioExterno .secaoFormularioUsuario legend{margin:0 0 14px;padding:0 0 11px;border-bottom:1px solid #e4d8c6;color:#6b593d;font-size:15px;font-weight:800}#modalUsuarioExterno .secaoFormularioUsuario legend i{width:20px;color:#9a7f52}
+#modalUsuarioExterno .campoLargoExterno{grid-column:1/-1}
+#modalUsuarioExterno .rodapeModal{position:sticky;bottom:0;z-index:2;display:flex;min-height:88px;justify-content:flex-end;gap:9px;padding:18px 30px;border-top:1px solid #d6c9b4;background:#ebe3d6}
+#modalUsuarioExterno .rodapeModal button{display:flex;min-width:120px;align-items:center;justify-content:center;gap:7px;padding:13px 20px;border:1px solid #cbbda7;border-radius:8px;background:#fff;color:#665a48;font-size:13px;font-weight:750;cursor:pointer}#modalUsuarioExterno #salvarUsuarioExterno{min-width:190px;border:0;background:linear-gradient(135deg,#806c49,#665436);color:#fff;box-shadow:0 5px 12px rgba(77,59,33,.2)}
+@media(max-width:760px){#modalUsuarioExterno{padding:8px}#modalUsuarioExterno .janelaUsuario{width:calc(100vw - 16px)}#modalUsuarioExterno .cabecalhoModal{min-height:auto;padding:20px}#modalUsuarioExterno .cabecalhoModal h2{font-size:21px}#modalUsuarioExterno .corpoFormularioUsuarioExterno{grid-template-columns:1fr;padding:16px}#modalUsuarioExterno .secaoFormularioUsuario{grid-template-columns:1fr;min-height:0}#modalUsuarioExterno .campoLargoExterno{grid-column:auto}#modalUsuarioExterno .rodapeModal{padding:14px 16px;flex-direction:column-reverse}}
+.perfilUsuario.perfilSEM_ACESSO{background:#f3e5e2;color:#95463d}

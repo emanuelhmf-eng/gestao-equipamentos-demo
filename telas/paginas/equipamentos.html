@@ -1,0 +1,319 @@
+<div class="equipamentos-container">
+
+    <div class="titulo-pagina">
+
+        <div>
+
+            <h1>Equipamentos</h1>
+
+            <span>
+
+                Controle de Equipamentos — Demonstração
+
+            </span>
+
+        </div>
+
+        <button id="btnNovoEquipamento">
+
+            + Novo Equipamento
+
+        </button>
+
+    </div>
+
+    <div class="cards-resumo">
+
+        <button class="cardResumo" type="button" data-indicador-categoria="ARMA_LONGA">
+
+            <h3>Total de Armas Longas</h3>
+
+            <span id="totalLongas">0</span>
+
+        </button>
+
+        <button class="cardResumo" type="button" data-indicador-categoria="ARMA_CURTA">
+
+            <h3>Total de Armas Curtas</h3>
+
+            <span id="totalCurtas">0</span>
+
+        </button>
+
+        <button class="cardResumo" type="button" data-indicador-categoria="RADIO">
+
+            <h3>Total de Rádios</h3>
+
+            <span id="totalRadios">0</span>
+
+        </button>
+
+        <button class="cardResumo" type="button" data-indicador-categoria="COLETE">
+
+            <h3>Total de Coletes</h3>
+
+            <span id="totalColetes">0</span>
+
+        </button>
+
+        <button class="cardResumo" type="button" data-indicador-categoria="MUNICAO">
+
+            <h3>Total de Munições</h3>
+
+            <span id="totalMunicoes">0</span>
+
+        </button>
+
+        <button class="cardResumo" type="button" data-indicador-categoria="OUTROS">
+
+            <h3>Total de Outros</h3>
+
+            <span id="totalOutros">0</span>
+
+        </button>
+
+    </div>
+
+    <div class="barraPesquisa">
+
+        <input
+            type="text"
+            id="pesquisaEquipamento"
+            placeholder="Pesquisar patrimônio, modelo, prefixo ou número de série">
+
+        <select id="filtroCategoria">
+
+            <option value="">Todas as categorias</option>
+
+            <option value="ARMA_LONGA">Armas Longas</option>
+
+            <option value="ARMA_CURTA">Armas Curtas</option>
+
+            <option value="RADIO">Rádios</option>
+
+            <option value="COLETE">Coletes</option>
+
+            <option value="MUNICAO">Munições</option>
+
+            <option value="OUTROS">Outros</option>
+
+        </select>
+
+        <select id="filtroStatus" class="filtroStatusEquipamentos" aria-label="Filtrar equipamentos por status" title="Filtrar por status">
+
+            <option value="">Todos os status</option>
+
+            <option value="DISPONIVEL">Disponível</option>
+
+            <option value="CAUTELADO">Cautelado</option>
+
+            <option value="MANUTENCAO">Manutenção</option>
+
+            <option value="BAIXADO">Baixado</option>
+
+        </select>
+
+    </div>
+
+    <table class="tabelaEquipamentos">
+
+        <thead>
+
+            <tr>
+
+                <th>Foto</th>
+
+                <th>Categoria</th>
+
+                <th>Fabricante</th>
+
+                <th>Modelo</th>
+
+                <th>Patrimônio</th>
+
+                <th>Prefixo / número de série</th>
+
+                <th>Validade</th>
+
+                <th>Status</th>
+
+                <th>Localização</th>
+
+                <th>Ações</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="listaEquipamentos">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<div id="modalHistoricoEquipamento" class="modal oculto">
+    <div class="janelaModal janelaHistoricoEquipamento">
+        <div class="cabecalhoModal"><div><h2>Histórico do equipamento</h2><p id="subtituloHistoricoEquipamento">Carregando informações...</p></div><button id="btnFecharHistoricoEquipamento" type="button" aria-label="Fechar histórico"><i class="fa-solid fa-xmark"></i></button></div>
+        <div id="conteudoHistoricoEquipamento" class="conteudoHistoricoEquipamento"></div>
+        <div class="rodapeModal"><button id="btnConcluirHistoricoEquipamento" type="button"><i class="fa-solid fa-xmark"></i> Fechar</button></div>
+    </div>
+</div>
+
+
+<div id="modalEquipamento" class="modal oculto">
+
+    <div class="janelaModal">
+
+        <div class="cabecalhoModal">
+
+            <div>
+                <h2 id="tituloModalEquipamento">Cadastrar novo equipamento</h2>
+                <p>Preencha os dados para incluir o item no sistema.</p>
+            </div>
+            <button id="btnFecharEquipamento" type="button" aria-label="Fechar">&times;</button>
+
+        </div>
+
+        <div class="corpoModal">
+
+            <div class="formulario formularioEquipamento">
+                <div class="secaoFormulario secaoIdentificacao">
+                    <h3><i class="fa-solid fa-tag"></i> Identificação</h3>
+
+                    <label class="campoFormulario">
+                        <span>Categoria <b>*</b></span>
+                        <select id="categoria">
+                            <option value="">Selecione a categoria</option>
+                            <option value="ARMA_LONGA">Arma longa</option>
+                            <option value="ARMA_CURTA">Arma curta</option>
+                            <option value="RADIO">Rádio</option>
+                            <option value="COLETE">Colete</option>
+                            <option value="MUNICAO">Munição</option>
+                            <option value="OUTROS">Outros</option>
+                        </select>
+                    </label>
+
+                    <label class="campoFormulario">
+                        <span>Fabricante</span>
+                        <input id="fabricante" placeholder="Ex.: Taurus">
+                    </label>
+
+                    <label class="campoFormulario">
+                        <span>Modelo <b id="obrigatorioModelo">*</b></span>
+                        <input id="modelo" placeholder="Informe o modelo">
+                    </label>
+
+                    <label class="campoFormulario">
+                        <span>Calibre</span>
+                        <input id="calibre" class="oculto" disabled>
+                        <select id="calibreMunicao">
+                            <option value="">Selecione o calibre</option>
+                            <optgroup label="Armas curtas">
+                                <option value=".22 LR">.22 LR</option>
+                                <option value=".25 ACP">.25 ACP</option>
+                                <option value=".32 ACP">.32 ACP</option>
+                                <option value=".380 ACP">.380 ACP</option>
+                                <option value=".38 SPL">.38 SPL</option>
+                                <option value=".357 Magnum">.357 Magnum</option>
+                                <option value="9x19 mm">9x19 mm</option>
+                                <option value=".40 S&amp;W">.40 S&amp;W</option>
+                                <option value=".45 ACP">.45 ACP</option>
+                            </optgroup>
+                            <optgroup label="Fuzis e carabinas">
+                                <option value=".22 WMR">.22 WMR</option>
+                                <option value=".30 Carbine">.30 Carbine</option>
+                                <option value=".300 BLK">.300 BLK</option>
+                                <option value=".308 Winchester">.308 Winchester</option>
+                                <option value="5,56x45 mm NATO">5,56x45 mm NATO</option>
+                                <option value="7,62x39 mm">7,62x39 mm</option>
+                                <option value="7,62x51 mm NATO">7,62x51 mm NATO</option>
+                            </optgroup>
+                            <optgroup label="Espingardas">
+                                <option value="Calibre 12">Calibre 12</option>
+                                <option value="Calibre 16">Calibre 16</option>
+                                <option value="Calibre 20">Calibre 20</option>
+                                <option value="Calibre 28">Calibre 28</option>
+                                <option value="Calibre 36">Calibre 36</option>
+                            </optgroup>
+                            <optgroup label="Outros">
+                                <option value="OUTRO">Outro calibre</option>
+                            </optgroup>
+                        </select>
+                        <input id="calibreMunicaoOutro" class="oculto" placeholder="Informe o calibre">
+                    </label>
+                </div>
+
+                <div class="secaoFormulario secaoControle">
+                    <h3><i class="fa-solid fa-barcode"></i> Controle patrimonial</h3>
+
+                    <label class="campoFormulario">
+                        <span>Prefixo / número de série</span>
+                        <input id="numeroSerie" placeholder="Informe o prefixo ou número de série">
+                    </label>
+
+                    <label class="campoFormulario">
+                        <span>Patrimônio</span>
+                        <input id="patrimonio" placeholder="Patrimônio">
+                    </label>
+
+                    <label id="campoQuantidade" class="campoFormulario campoQuantidade oculto">
+                        <span><span id="rotuloQuantidade">Quantidade de munições</span> <b>*</b></span>
+                        <input id="quantidade" type="number" value="1" min="1" step="1">
+                        <small id="ajudaQuantidade">Informe o total de unidades deste lote.</small>
+                    </label>
+                </div>
+
+                <div class="secaoFormulario secaoSituacao">
+                    <h3><i class="fa-solid fa-location-dot"></i> Situação</h3>
+
+                    <label class="campoFormulario">
+                        <span>Status</span>
+                        <select id="status">
+                            <option value="DISPONIVEL">Disponível</option>
+                            <option value="MANUTENCAO">Manutenção</option>
+                            <option value="BAIXADO">Baixado</option>
+                        </select>
+                    </label>
+
+                    <label class="campoFormulario">
+                        <span>Localização</span>
+                        <input id="localizacao" placeholder="Ex.: Reserva de armamento">
+                    </label>
+
+                    <label class="campoFormulario">
+                        <span>Validade</span>
+                        <input id="dataValidade" type="date" aria-label="Data de validade do equipamento">
+                    </label>
+
+                    <label class="campoFormulario campoObservacao">
+                        <span>Observações</span>
+                        <textarea id="observacao" placeholder="Informações complementares"></textarea>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rodapeModal">
+
+            <span id="erroEquipamento" class="erroEquipamento" role="alert" aria-live="polite"></span>
+
+            <button id="btnCancelarEquipamento">
+
+                Cancelar
+
+            </button>
+
+            <button id="btnSalvarEquipamento">
+
+                Salvar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

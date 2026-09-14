@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Cautela Demo</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="login-body">
+
+<div class="login-box">
+
+    <img class="login-logo" src="../assets/demo-logo.svg" alt="Identidade visual demonstrativa">
+
+    <h1>CAUTELA DEMO</h1>
+
+    <p data-unidade-sistema>Sistema de Cautela Militar</p>
+
+    <p style="font-size:14px">Acesso demo: <strong>demo</strong> / <strong>Demo123!</strong></p>
+    <form id="formLogin">
+        <input
+            id="matricula"
+            autocomplete="username"
+            placeholder="Matrícula">
+
+        <input
+            id="senha"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Senha">
+
+        <span id="erroLogin" class="erroLogin" role="alert" aria-live="polite"></span>
+
+        <button id="btnEntrar" type="submit">
+            Entrar
+        </button>
+    </form>
+
+</div>
+
+<script src="../js/identidade.js"></script>
+<script src="../js/login.js"></script>
+
+</body>
+
+</html>

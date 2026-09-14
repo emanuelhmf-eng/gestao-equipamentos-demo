@@ -1,0 +1,50 @@
+<section class="pagina paginaRelatorios">
+    <div class="titulo-pagina"><div><h1>Relatórios operacionais</h1><p>Cadastros, cautelas e devoluções registrados no sistema.</p></div><div id="acoesLimpezaRelatorios" class="acoesLimpezaPeriodo" hidden><label><span>Encerrados de</span><input id="dataInicialLimpezaRelatorios" type="date"></label><label><span>Até</span><input id="dataFinalLimpezaRelatorios" type="date"></label><button id="btnLimparRelatorios" class="botaoLimpezaAdministrador" type="button"><i class="fa-solid fa-trash-can"></i> Limpar período</button></div></div>
+    <section class="painelRelatorio">
+        <div class="cabecalhoRelatorio cabecalhoRelatorioCautelas"><div><h2>Cautelas e devoluções</h2><p>Uma linha por cautela, com os horários de abertura e devolução.</p></div><div class="filtrosRelatorio"><input id="filtroRelatorioCautelas" placeholder="Filtrar graduação, policial ou situação"><label><span>Data inicial</span><input id="dataInicialRelatorioCautelas" type="date" aria-label="Data inicial das cautelas"></label><label><span>Data final</span><input id="dataFinalRelatorioCautelas" type="date" aria-label="Data final das cautelas"></label></div></div>
+        <div class="acoesSelecaoRelatorio">
+            <span id="contadorSelecaoRelatorio">Nenhum registro selecionado</span>
+            <div><button id="btnVisualizarSelecionados" type="button" disabled><i class="fa-solid fa-eye"></i> Visualizar selecionados</button><button id="btnGerarPdfSelecionados" type="button" disabled><i class="fa-solid fa-file-pdf"></i> Gerar relatório selecionado</button></div>
+        </div>
+        <div class="rolagemRelatorio"><table class="tabela tabelaCaqui tabelaCautelasRelatorio"><thead><tr><th class="colunaSelecaoRelatorio"><input id="selecionarTodosRelatorios" type="checkbox" aria-label="Selecionar todos os registros visíveis"></th><th>Abertura da cautela</th><th>Devolução da cautela</th><th>Graduação</th><th>Policial</th><th>Situação</th></tr></thead><tbody id="relatorioCautelas"></tbody></table></div>
+    </section>
+
+    <section class="painelRelatorio painelRelatorioPermanente">
+        <div class="cabecalhoRelatorio"><div><h2>Cautelas permanentes</h2><p>Registros exclusivos dos vínculos permanentes de equipamentos.</p></div><div class="filtrosRelatorio"><input id="filtroRelatorioPermanentes" placeholder="Filtrar graduação, policial ou situação"><label><span>Data inicial</span><input id="dataInicialRelatorioPermanentes" type="date"></label><label><span>Data final</span><input id="dataFinalRelatorioPermanentes" type="date"></label></div></div>
+        <div class="acoesSelecaoRelatorio"><span id="contadorSelecaoPermanentes">Nenhum registro selecionado</span><div><button id="btnVisualizarPermanentesSelecionadas" type="button" disabled><i class="fa-solid fa-eye"></i> Visualizar selecionados</button><button id="btnPdfPermanentesSelecionadas" type="button" disabled><i class="fa-solid fa-file-pdf"></i> Gerar PDF selecionados</button></div></div>
+        <div class="rolagemRelatorio"><table class="tabela tabelaCaqui tabelaRelatorioPermanentes"><thead><tr><th class="colunaSelecaoRelatorio"><input id="selecionarTodasPermanentes" type="checkbox"></th><th>Abertura da cautela</th><th>Devolução da cautela</th><th>Graduação</th><th>Policial</th><th>Situação</th></tr></thead><tbody id="relatorioCautelasPermanentes"></tbody></table></div>
+    </section>
+
+    <section class="painelRelatorio painelRelatorioExterno">
+        <div class="cabecalhoRelatorio"><div><h2>Cautelas externas</h2><p>Registros emitidos para policiais de outras unidades.</p></div><div class="filtrosRelatorio"><input id="filtroRelatorioExternas" placeholder="Filtrar policial, graduação ou unidade"><label><span>Data inicial</span><input id="dataInicialRelatorioExternas" type="date"></label><label><span>Data final</span><input id="dataFinalRelatorioExternas" type="date"></label></div></div>
+        <div class="acoesSelecaoRelatorio"><span id="contadorSelecaoExternas">Nenhum registro selecionado</span><div><button id="btnVisualizarExternasSelecionadas" type="button" disabled><i class="fa-solid fa-eye"></i> Visualizar selecionados</button><button id="btnPdfExternasSelecionadas" type="button" disabled><i class="fa-solid fa-file-pdf"></i> Gerar PDF selecionados</button></div></div>
+        <div class="rolagemRelatorio"><table class="tabela tabelaCaqui tabelaRelatorioExternas"><thead><tr><th class="colunaSelecaoRelatorio"><input id="selecionarTodasExternas" type="checkbox" aria-label="Selecionar todas as cautelas externas visíveis"></th><th>Abertura da cautela</th><th>Devolução da cautela</th><th>Graduação</th><th>Policial</th><th>Unidade de origem</th><th>Armeiro responsável</th><th>Situação</th></tr></thead><tbody id="relatorioCautelasExternas"></tbody></table></div>
+    </section>
+
+    <section class="painelRelatorio">
+        <div class="cabecalhoRelatorio"><div><h2>Equipamentos cadastrados</h2><p>Inventário por data de inclusão.</p></div><div class="filtrosRelatorio"><input id="filtroRelatorioEquipamentos" placeholder="Filtrar categoria, modelo, patrimônio, prefixo ou número de série"><label><span>Data inicial</span><input id="dataInicialRelatorioEquipamentos" type="date" aria-label="Data inicial dos equipamentos"></label><label><span>Data final</span><input id="dataFinalRelatorioEquipamentos" type="date" aria-label="Data final dos equipamentos"></label></div></div>
+        <div class="acoesSelecaoRelatorio"><span id="contadorSelecaoEquipamentos">Nenhum registro selecionado</span><div><button id="btnVisualizarRelatorioEquipamentos" type="button"><i class="fa-solid fa-eye"></i> Visualizar</button><button id="btnGerarPdfEquipamentos" type="button"><i class="fa-solid fa-file-pdf"></i> Gerar PDF</button></div></div>
+        <div class="rolagemRelatorio"><table class="tabela tabelaCaqui"><thead><tr><th class="colunaSelecaoRelatorio"><input id="selecionarTodosEquipamentos" type="checkbox" aria-label="Selecionar todos os equipamentos visíveis"></th><th>Data e hora</th><th>Operação</th><th>Categoria</th><th>Equipamento</th><th>Patrimônio</th><th>Prefixo / número de série</th><th>Quantidade</th><th>Observações e edições</th></tr></thead><tbody id="relatorioEquipamentos"></tbody></table></div>
+    </section>
+
+    <section class="painelRelatorio">
+        <div class="cabecalhoRelatorio"><div><h2>Policiais cadastrados</h2><p>Relação de usuários incluídos no sistema.</p></div><div class="filtrosRelatorio"><input id="filtroRelatorioPoliciais" placeholder="Filtrar matrícula, graduação ou nome de guerra"><label><span>Data inicial</span><input id="dataInicialRelatorioPoliciais" type="date" aria-label="Data inicial dos policiais"></label><label><span>Data final</span><input id="dataFinalRelatorioPoliciais" type="date" aria-label="Data final dos policiais"></label></div></div>
+        <div class="acoesSelecaoRelatorio"><span id="contadorSelecaoPoliciais">Nenhum registro selecionado</span><div><button id="btnVisualizarRelatorioPoliciais" type="button"><i class="fa-solid fa-eye"></i> Visualizar</button><button id="btnGerarPdfPoliciais" type="button"><i class="fa-solid fa-file-pdf"></i> Gerar PDF</button></div></div>
+        <div class="rolagemRelatorio"><table class="tabela tabelaCaqui"><thead><tr><th class="colunaSelecaoRelatorio"><input id="selecionarTodosPoliciais" type="checkbox" aria-label="Selecionar todos os policiais visíveis"></th><th>Data e hora</th><th>Operação</th><th>Matrícula</th><th>Graduação</th><th>Nome de guerra</th><th>Modificações</th></tr></thead><tbody id="relatorioPoliciais"></tbody></table></div>
+    </section>
+</section>
+
+<div id="modalRelatorioCautela" class="modal modalCautela oculto">
+    <div class="janelaModal janelaRelatorioCautela">
+        <div class="cabecalhoModal"><div><h2>Relatório da cautela</h2><p>Documento operacional detalhado</p></div><button id="fecharRelatorioCautela">&times;</button></div>
+        <div id="documentoRelatorioCautela" class="documentoRelatorioCautela"></div>
+        <div class="rodapeModal"><button id="btnGerarPdfCautela"><i class="fa-solid fa-file-pdf"></i> Gerar PDF</button></div>
+    </div>
+</div>
+
+<div id="modalRelatorioListagem" class="modal modalCautela oculto">
+    <div class="janelaModal janelaRelatorioCautela">
+        <div class="cabecalhoModal"><div><h2 id="tituloRelatorioListagem">Relatório</h2><p>Pré-visualização dos registros filtrados</p></div><button id="fecharRelatorioListagem">&times;</button></div>
+        <div id="documentoRelatorioListagem" class="documentoRelatorioCautela"></div>
+    </div>
+</div>

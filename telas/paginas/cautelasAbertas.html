@@ -1,0 +1,141 @@
+<section class="pagina paginaCautelasAbertas">
+    <div class="titulo-pagina">
+        <div>
+            <h1>Cautelas em aberto</h1>
+            <p>Acompanhe, edite ou receba cautelas pendentes.</p>
+        </div>
+    </div>
+
+    <section class="blocoTipoCautela blocoCautelaTemporaria">
+    <div class="cabecalhoTipoCautela cabecalhoTabelaTemporaria">
+        <div class="identificacaoTipoCautela"><span class="iconeTipoCautela"><i class="fa-regular fa-clock"></i></span><div><small>TIPO DE CAUTELA</small><h2>Cautelas temporárias</h2><p>Materiais entregues para utilização por período determinado.</p></div></div>
+        <span class="seloTipoCautela"><i class="fa-solid fa-hourglass-half"></i> Temporárias</span>
+    </div>
+    <div class="campoComIcone filtroTabelaCautelas">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="filtroCautelasTemporarias" type="search" placeholder="Pesquisar policial, graduação ou data">
+    </div>
+    <div class="tabelaResponsiva">
+        <table class="tabela tabelaCaqui">
+            <thead>
+                <tr>
+                    <th>Policial</th>
+                    <th>Graduação</th>
+                    <th>Data de abertura</th>
+                    <th>Operações</th>
+                </tr>
+            </thead>
+            <tbody id="listaCautelasAbertas"></tbody>
+        </table>
+    </div>
+    </section>
+
+    <section class="blocoTipoCautela blocoCautelaPermanente">
+    <div class="cabecalhoTipoCautela cabecalhoTabelaPermanente">
+        <div class="identificacaoTipoCautela"><span class="iconeTipoCautela"><i class="fa-solid fa-link"></i></span><div><small>TIPO DE CAUTELA</small><h2>Cautelas permanentes</h2><p>Equipamentos vinculados permanentemente aos policiais.</p></div></div>
+        <span class="seloTipoCautela"><i class="fa-solid fa-link"></i> Permanentes</span>
+    </div>
+
+    <div class="campoComIcone filtroTabelaCautelas filtroTabelaPermanentes">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="filtroCautelasPermanentes" type="search" placeholder="Pesquisar cautela permanente">
+    </div>
+    <div class="tabelaResponsiva tabelaPermanentesCautela">
+        <table class="tabela tabelaCaqui">
+            <thead>
+                <tr>
+                    <th>Policial</th>
+                    <th>Graduação</th>
+                    <th>Data de abertura</th>
+                    <th>Operações</th>
+                </tr>
+            </thead>
+            <tbody id="listaCautelasPermanentes"></tbody>
+        </table>
+    </div>
+    </section>
+
+    <section class="blocoTipoCautela blocoCautelaExterna">
+    <div class="cabecalhoTipoCautela cabecalhoTabelaExterna"><div class="identificacaoTipoCautela"><span class="iconeTipoCautela"><i class="fa-solid fa-building-shield"></i></span><div><small>TIPO DE CAUTELA</small><h2>Cautelas externas</h2><p>Materiais entregues a policiais vinculados a outras unidades.</p></div></div><span class="seloTipoCautela"><i class="fa-solid fa-building-shield"></i> Externas</span></div>
+    <div class="campoComIcone filtroTabelaCautelas"><i class="fa-solid fa-magnifying-glass"></i><input id="filtroCautelasExternas" type="search" placeholder="Pesquisar policial, graduação, unidade ou data"></div>
+    <div class="tabelaResponsiva tabelaExternasCautela"><table class="tabela tabelaCaqui"><thead><tr><th>Policial</th><th>Graduação</th><th>Unidade de origem</th><th>Data de abertura</th><th>Operações</th></tr></thead><tbody id="listaCautelasExternas"></tbody></table></div>
+    </section>
+</section>
+
+<div id="modalDetalhesCautela" class="modal modalCautela oculto">
+    <div class="janelaModal janelaDetalhesCautela">
+        <div class="cabecalhoModal">
+            <div><h2>Detalhes da cautela</h2><p id="subtituloDetalhesCautela"></p></div>
+            <button type="button" data-fechar-modal="modalDetalhesCautela">&times;</button>
+        </div>
+        <div id="conteudoDetalhesCautela" class="corpoDetalhesCautela"></div>
+    </div>
+</div>
+
+<div id="modalEditarCautela" class="modal modalCautela oculto">
+    <div class="janelaModal janelaEditarCautela">
+        <div class="cabecalhoModal">
+            <div><h2>Editar cautela</h2><p id="subtituloEditarCautela"></p></div>
+            <button type="button" data-fechar-modal="modalEditarCautela">&times;</button>
+        </div>
+        <div class="corpoEdicaoCautela">
+            <section id="dadosExternosEdicao" class="secaoEdicaoCautela oculto"><div class="cabecalhoSecaoCautela"><span class="numeroEtapaCautela">1</span><div><h2>Dados da cautela externa</h2><p>Atualize as informações do policial e da autorização.</p></div></div><div id="camposExternosEdicao" class="formularioExternoCautela"></div></section>
+            <section class="secaoEdicaoCautela">
+                <div class="cabecalhoSecaoCautela">
+                    <span class="numeroEtapaCautela">1</span>
+                    <div><h2>Equipamentos disponíveis</h2><p>Pesquise e marque os itens da cautela.</p></div>
+                </div>
+                <div class="campoComIcone pesquisaEdicaoCautela">
+                    <i class="fa-solid fa-filter"></i>
+                    <input id="pesquisaEdicaoCautela" placeholder="Filtrar categoria, equipamento ou patrimônio">
+                </div>
+                <div id="listaEdicaoCautela" class="listaEdicaoCautela listaEquipamentosCautela"></div>
+            </section>
+            <section class="secaoEdicaoCautela">
+                <div class="cabecalhoSecaoCautela">
+                    <span class="numeroEtapaCautela">2</span>
+                    <div><h2>Itens selecionados</h2><p>Confira os equipamentos antes de salvar.</p></div>
+                    <span id="totalSelecionadosEdicaoCautela" class="totalSelecionadosCautela">0 itens</span>
+                </div>
+                <div id="listaSelecionadosEdicaoCautela" class="listaSelecionadosCautela"></div>
+            </section>
+            <section class="secaoEdicaoCautela">
+                <div class="cabecalhoSecaoCautela">
+                    <span class="numeroEtapaCautela">3</span>
+                    <div><h2>Observações da edição</h2><p>Preencha somente quando houver uma informação adicional.</p></div>
+                </div>
+                <textarea id="observacaoEdicaoCautela" class="observacaoEdicaoCautela" rows="4" maxlength="1000"
+                    placeholder="Informe uma observação sobre esta edição (opcional)"></textarea>
+            </section>
+        </div>
+        <div class="rodapeModal">
+            <button type="button" data-fechar-modal="modalEditarCautela">Cancelar</button>
+            <button type="button" id="btnSalvarEdicaoCautela">Salvar alterações</button>
+        </div>
+    </div>
+</div>
+
+<div id="modalReceberCautela" class="modal modalCautela oculto">
+    <div class="janelaModal janelaReceberCautela">
+        <div class="cabecalhoModal">
+            <div><h2>Receber equipamentos</h2><p id="subtituloReceberCautela"></p></div>
+            <button type="button" data-fechar-modal="modalReceberCautela">&times;</button>
+        </div>
+        <div class="corpoReceberCautela">
+            <div class="materiaisRecebimentoCautela"><h3>Equipamentos cautelados</h3><div id="listaRecebimentoCautela"></div></div>
+            <span class="iconeConfirmacaoCautela" aria-hidden="true">
+                <i class="fa-solid fa-key"></i>
+            </span>
+            <p>Digite a senha do policial para confirmar a devolução de todos os materiais.</p>
+            <label><span>Senha do policial</span><input id="senhaReceberCautela" type="password" autocomplete="off"></label>
+            <label><span>Observação do recebimento (opcional)</span>
+                <textarea id="observacaoReceberCautela" rows="4" maxlength="1000"
+                    placeholder="Informe alguma ocorrência ou observação sobre o recebimento"></textarea>
+            </label>
+        </div>
+        <div class="rodapeModal">
+            <button type="button" data-fechar-modal="modalReceberCautela">Cancelar</button>
+            <button type="button" id="btnConfirmarRecebimentoCautela">Confirmar recebimento</button>
+        </div>
+    </div>
+</div>

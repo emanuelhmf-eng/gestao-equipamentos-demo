@@ -1,0 +1,106 @@
+<section class="pagina paginaUsuarios">
+    <div class="titulo-pagina cabecalhoUsuarios">
+        <div>
+            <h1>Cadastro de Policiais</h1>
+            <p>Gerencie os policiais e seus níveis de acesso ao sistema.</p>
+        </div>
+        <div class="acoesCabecalhoUsuarios">
+            <span id="totalUsuarios" class="contadorUsuarios"><i class="fa-solid fa-users"></i> 0 policiais</span>
+            <button id="btnNovoUsuario" type="button"><i class="fa-solid fa-user-plus"></i> Novo policial</button>
+        </div>
+    </div>
+
+    <div id="modalUsuario" class="modal oculto">
+      <div id="formUsuario" class="janelaModal janelaUsuario formularioUsuario">
+        <div class="cabecalhoModal">
+            <div><h2 id="tituloFormUsuario">Cadastrar novo policial</h2><p>Preencha os dados para incluir o policial no sistema.</p></div>
+            <button id="btnFecharUsuario" type="button" aria-label="Fechar">&times;</button>
+        </div>
+
+        <div class="corpoFormularioUsuario">
+            <fieldset class="secaoFormularioUsuario secaoIdentificacaoUsuario">
+                <legend><i class="fa-solid fa-id-card"></i> Identificação</legend>
+                <label><span>Matrícula</span><input id="matricula" placeholder="Informe a matrícula"></label>
+                <label class="campoNomeUsuario"><span>Nome completo</span><input id="nome" placeholder="Informe o nome completo"></label>
+                <label><span>Nome de guerra</span><input id="nomeGuerra" placeholder="Informe o nome de guerra"></label>
+                <label><span>Graduação</span><select id="graduacao">
+                    <option value="">Selecione</option><option>SD</option><option>CB</option><option>3º SGT</option>
+                    <option>2º SGT</option><option>1º SGT</option><option>ST</option><option>ASP</option>
+                    <option>2º TEN</option><option>1º TEN</option><option>CAP</option><option>MAJ</option>
+                    <option>TEN CEL</option><option>CEL</option>
+                </select></label>
+            </fieldset>
+
+            <fieldset class="secaoFormularioUsuario">
+                <legend><i class="fa-solid fa-briefcase"></i> Informações funcionais</legend>
+                <label><span>Pelotão</span><select id="pelotao">
+                    <option value="">Selecione o pelotão</option>
+                    <option>1º Pelotão</option><option>2º Pelotão</option>
+                    <option>3º Pelotão</option><option>4º Pelotão</option>
+                    <option>5º Pelotão</option><option>6º Pelotão</option>
+                    <option>7º Pelotão</option><option>8º Pelotão</option>
+                    <option>9º Pelotão</option><option>10º Pelotão</option>
+                </select></label>
+                <label><span>Função</span><input id="funcao" placeholder="Informe a função"></label>
+                <label><span>Telefone</span><input id="telefone" placeholder="(00) 00000-0000"></label>
+                <label><span>E-mail</span><input id="email" type="email" placeholder="nome@exemplo.com"></label>
+            </fieldset>
+
+            <fieldset class="secaoFormularioUsuario secaoAcessoUsuario">
+                <legend><i class="fa-solid fa-shield-halved"></i> Acesso ao sistema</legend>
+                <label><span>Perfil de acesso</span><select id="perfil">
+                    <option>ADMINISTRADOR</option><option>ARMEIRO</option><option>COMANDANTE</option><option>CONSULTA</option>
+                    <option value="SEM_ACESSO">SEM ACESSO</option>
+                </select></label>
+                <label><span>Senha</span><input id="senha" type="password" placeholder="Defina uma senha" autocomplete="new-password"></label>
+                <label class="campoObservacaoUsuario"><span>Observações</span><textarea id="observacao" placeholder="Informações complementares"></textarea></label>
+            </fieldset>
+        </div>
+
+        <div class="rodapeModal rodapeFormularioUsuario">
+            <button id="btnCancelarUsuario" type="button"><i class="fa-solid fa-xmark"></i> Limpar</button>
+            <button id="btnSalvarUsuario" type="button"><i class="fa-solid fa-floppy-disk"></i> Salvar policial</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="painelUsuario listagemUsuarios">
+        <div class="cabecalhoListaUsuarios">
+            <div><h2>Policiais cadastrados</h2><p>Consulte ou edite os registros existentes.</p></div>
+            <div class="pesquisaUsuarios"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="pesquisaUsuario" placeholder="Pesquisar matrícula, nome ou graduação"></div>
+        </div>
+        <div class="tabelaUsuariosResponsiva">
+            <table class="tabela tabelaUsuarios">
+                <colgroup><col class="colPolicial"><col class="colGraduacao"><col class="colLotacao"><col class="colContato"><col class="colPerfil"><col class="colStatus"><col class="colAcoes"></colgroup>
+                <thead><tr><th>Policial</th><th>Graduação</th><th>Lotação / função</th><th>Contato</th><th>Perfil</th><th>Status</th><th>Ações</th></tr></thead>
+                <tbody id="tabelaUsuarios"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="painelUsuario listagemUsuarios listagemUsuariosExternos">
+        <div class="cabecalhoListaUsuarios">
+            <div><h2>Policiais de outras unidades</h2><p>Policiais registrados por meio das cautelas externas.</p></div>
+            <div class="pesquisaUsuarios"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="pesquisaUsuarioExterno" placeholder="Pesquisar matrícula, nome, graduação ou unidade"></div>
+        </div>
+        <div class="tabelaUsuariosResponsiva"><table class="tabela tabelaUsuarios tabelaUsuariosExternos"><colgroup><col class="colExternoPolicial"><col class="colExternoMatricula"><col class="colExternoGraduacao"><col class="colExternoUnidade"><col class="colExternoContato"><col class="colExternoAcoes"></colgroup><thead><tr><th>Policial</th><th>Matrícula</th><th>Graduação</th><th>Unidade de origem</th><th>Contato</th><th>Ações</th></tr></thead><tbody id="tabelaUsuariosExternos"></tbody></table></div>
+    </section>
+</section>
+
+<div id="modalUsuarioExterno" class="modal oculto"><div class="janelaModal janelaUsuario formularioUsuario">
+    <div class="cabecalhoModal"><div><h2>Editar policial externo</h2><p>Atualize os dados utilizados nas cautelas externas.</p></div><button id="fecharUsuarioExterno" type="button">&times;</button></div>
+    <div class="corpoFormularioUsuario corpoFormularioUsuarioExterno">
+        <fieldset class="secaoFormularioUsuario"><legend><i class="fa-solid fa-id-card"></i> Identificação</legend>
+            <label><span>Matrícula</span><input id="externoEditarMatricula" disabled></label>
+            <label><span>Graduação</span><input id="externoEditarGraduacao"></label>
+            <label><span>Nome completo</span><input id="externoEditarNomeCompleto"></label>
+            <label><span>Nome de guerra</span><input id="externoEditarNomeGuerra"></label>
+        </fieldset>
+        <fieldset class="secaoFormularioUsuario"><legend><i class="fa-solid fa-building-shield"></i> Unidade e contato</legend>
+            <label class="campoLargoExterno"><span>Unidade de origem</span><input id="externoEditarUnidade"></label>
+            <label><span>Telefone</span><input id="externoEditarTelefone"></label>
+            <label><span>E-mail</span><input id="externoEditarEmail" type="email"></label>
+        </fieldset>
+    </div>
+    <div class="rodapeModal"><button id="cancelarUsuarioExterno" type="button">Cancelar</button><button id="salvarUsuarioExterno" type="button"><i class="fa-solid fa-floppy-disk"></i> Salvar alterações</button></div>
+</div></div>

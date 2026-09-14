@@ -1,0 +1,19 @@
+{
+  "name": "gestao-equipamentos-demo",
+  "version": "1.0.0",
+  "description": "Aplicação desktop demonstrativa para gestão de cautelas e estoque de equipamentos com dados fictícios",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "demo:export": "node scripts/export-demo.js",
+    "test": "node --test tests/demo.test.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "jspdf": "^4.2.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "electron": "^43.2.0"
+  }
+}

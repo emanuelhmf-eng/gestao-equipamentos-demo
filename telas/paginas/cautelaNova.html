@@ -1,0 +1,105 @@
+<section class="pagina paginaNovaCautela">
+    <div class="titulo-pagina cabecalhoNovaCautela">
+        <div><h1>Nova cautela</h1><p>Selecione o policial e os equipamentos que serão entregues.</p></div>
+        <span class="etapaCautela"><i class="fa-solid fa-shield-halved"></i> Emissão segura</span>
+    </div>
+
+    <section class="secaoNovaCautela secaoIdentificacaoNovaCautela">
+        <div class="cabecalhoSecaoCautela">
+            <span class="numeroEtapaCautela">1</span>
+            <div><h2>Identificação do policial</h2><p>Localize o policial por matrícula ou nome.</p></div>
+        </div>
+        <div class="buscaPolicialCautela">
+            <label class="campoAutocompleteCautela"><span>Matrícula</span><div class="campoComIcone"><i class="fa-solid fa-id-card"></i><input id="buscarMatriculaPolicial" list="sugestoesMatriculaPolicial" autocomplete="off" placeholder="Digite a matrícula"><datalist id="sugestoesMatriculaPolicial"></datalist></div></label>
+            <label class="campoAutocompleteCautela"><span>Nome do policial</span><div class="campoComIcone"><i class="fa-solid fa-user-shield"></i><input id="buscarNomePolicial" list="sugestoesNomePolicial" autocomplete="off" placeholder="Digite o nome"><datalist id="sugestoesNomePolicial"></datalist></div></label>
+            <button id="btnBuscarPolicial" type="button"><i class="fa-solid fa-user-check"></i> Buscar policial</button>
+        </div>
+        <div class="dadosPolicialCautela">
+            <label class="campoNomePolicial"><span>Nome</span><input id="nomePolicial" placeholder="Aguardando seleção" readonly></label>
+            <label><span>Graduação</span><input id="graduacaoPolicial" placeholder="—" readonly></label>
+            <label><span>Pelotão</span><input id="pelotaoPolicial" placeholder="—" readonly></label>
+            <label><span>Função</span><input id="funcaoPolicial" placeholder="—" readonly></label>
+        </div>
+    </section>
+
+    <div class="gradeOperacaoNovaCautela">
+    <section class="secaoNovaCautela secaoEquipamentosNovaCautela">
+        <div class="cabecalhoSecaoCautela">
+            <span class="numeroEtapaCautela">2</span>
+            <div><h2>Equipamentos disponíveis</h2><p>Pesquise e marque os itens que serão cautelados.</p></div>
+        </div>
+        <div class="campoComIcone pesquisaCautela"><i class="fa-solid fa-filter"></i>
+            <input
+                id="pesquisaEquipamento"
+                placeholder="Filtrar por categoria, modelo, patrimônio, prefixo ou série"
+>
+        </div>
+        <div id="listaEquipamentos" class="listaEquipamentosCautela"></div>
+    </section>
+
+    <section class="secaoNovaCautela secaoSelecionadosNovaCautela">
+        <div class="cabecalhoSecaoCautela">
+            <span class="numeroEtapaCautela">3</span>
+            <div><h2>Itens selecionados</h2><p>Confira os equipamentos antes de emitir.</p></div>
+            <span id="totalSelecionadosCautela" class="totalSelecionadosCautela">0 itens</span>
+        </div>
+        <div id="listaSelecionados" class="listaSelecionadosCautela"></div>
+        <label class="campoObservacaoCautela">
+            <span><i class="fa-regular fa-note-sticky"></i> Observação</span>
+            <textarea id="observacaoCautela" maxlength="1000" placeholder="Acrescente uma observação sobre esta cautela (opcional)"></textarea>
+        </label>
+        <div class="registroEmergencialCautela">
+            <label class="alternadorEmergencialCautela" for="cautelaEmergencial">
+                <input id="cautelaEmergencial" type="checkbox">
+                <span class="controleAlternadorEmergencial" aria-hidden="true"></span>
+                <span><strong>Registrar cautela emergencial</strong><small>Use para lançar uma entrega realizada durante a indisponibilidade do sistema.</small></span>
+            </label>
+            <div id="campoDataEmergencialCautela" class="datasEmergenciaisCautela oculto">
+                <label class="campoDataEmergencialCautela">
+                    <span><i class="fa-regular fa-calendar-check"></i> Data e hora reais da entrega</span>
+                    <input id="dataHoraEmergencialCautela" type="datetime-local">
+                </label>
+                <label class="campoDataEmergencialCautela">
+                    <span><i class="fa-solid fa-box-open"></i> Data e hora reais do recebimento <small>(opcional)</small></span>
+                    <input id="dataHoraRecebimentoEmergencial" type="datetime-local">
+                </label>
+                <small class="ajudaRecebimentoEmergencial">Deixe o recebimento em branco se a cautela ainda estiver aberta.</small>
+            </div>
+        </div>
+        <div class="rodapeNovaCautela">
+            <span><i class="fa-solid fa-lock"></i> A senha será solicitada para confirmar a emissão.</span>
+            <div class="acoesEmissaoNovaCautela">
+                <button id="btnFinalizarCautela" class="botaoPrincipal" type="button"><i class="fa-solid fa-file-signature"></i> Emitir cautela</button>
+                <button id="btnReceberCautelaNova" class="botaoPrincipal botaoReceberNovaCautela" type="button"><i class="fa-solid fa-box-open"></i> Receber cautela</button>
+            </div>
+        </div>
+    </section>
+    </div>
+</section>
+
+<div id="modalConfirmarCautela" class="modal modalCautela modalConfirmarCautela oculto">
+    <div class="janelaModal">
+        <div class="cabecalhoModal">
+            <div><h2>Confirmar emissão</h2><p>Autorização do policial selecionado</p></div>
+            <button id="fecharConfirmacaoCautela" type="button" aria-label="Fechar">&times;</button>
+        </div>
+        <div class="corpoConfirmacaoCautela">
+            <span class="iconeConfirmacaoCautela"><i class="fa-solid fa-key"></i></span>
+            <strong id="policialConfirmacaoCautela"></strong>
+            <p>Digite a senha do policial para confirmar a emissão.</p>
+            <section class="resumoEmissaoCautela" aria-labelledby="tituloResumoEmissaoCautela">
+                <div class="cabecalhoResumoEmissaoCautela">
+                    <strong id="tituloResumoEmissaoCautela">Itens que serão cautelados</strong>
+                    <span id="totalResumoEmissaoCautela">0 itens</span>
+                </div>
+                <div id="listaResumoEmissaoCautela" class="listaResumoEmissaoCautela"></div>
+            </section>
+            <label><span>Senha de confirmação</span><input id="senhaConfirmacaoCautela" type="password" autocomplete="current-password" placeholder="Senha do policial ou administrador"></label>
+            <span id="erroConfirmacaoCautela" class="erroConfirmacaoCautela"></span>
+        </div>
+        <div class="rodapeModal">
+            <button id="cancelarConfirmacaoCautela" type="button">Cancelar</button>
+            <button id="confirmarEmissaoCautela" type="button"><i class="fa-solid fa-check"></i> Confirmar e emitir</button>
+        </div>
+    </div>
+</div>

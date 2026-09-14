@@ -1,0 +1,34 @@
+<section class="pagina paginaHistorico">
+    <div class="titulo-pagina"><div><h1>Histórico</h1><p>Operações registradas pelo sistema.</p></div><div id="acoesLimpezaHistorico" class="acoesLimpezaPeriodo" hidden><label><span>Remover de</span><input id="dataInicialLimpezaHistorico" type="date"></label><label><span>Até</span><input id="dataFinalLimpezaHistorico" type="date"></label><button id="btnLimparHistorico" class="botaoLimpezaAdministrador" type="button"><i class="fa-solid fa-trash-can"></i> Limpar período</button></div></div>
+    <div class="filtrosHistorico">
+        <div class="campoComIcone filtroHistorico">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                id="filtroHistorico"
+                type="search"
+                placeholder="Filtrar por operação, policial, equipamento, patrimônio, prefixo ou série"
+                aria-label="Filtrar registros do histórico">
+        </div>
+        <label class="filtroDataHistorico">
+            <span>Data inicial</span>
+            <input id="filtroDataInicialHistorico" type="date" aria-label="Data inicial do histórico">
+        </label>
+        <label class="filtroDataHistorico">
+            <span>Data final</span>
+            <input id="filtroDataFinalHistorico" type="date" aria-label="Data final do histórico">
+        </label>
+    </div>
+    <div class="tabelaResponsiva tabelaScrollHistorico" tabindex="0" aria-label="Tabela do histórico com rolagem própria">
+        <table class="tabela tabelaCaqui">
+            <thead><tr><th>Data e hora</th><th>Operação</th><th>Policial</th><th>Detalhes</th></tr></thead>
+            <tbody id="listaHistorico"></tbody>
+        </table>
+    </div>
+</section>
+
+<div id="modalDetalhesHistorico" class="modal modalCautela oculto">
+    <div class="janelaModal janelaDetalhesCautela">
+        <div class="cabecalhoModal"><div><h2>Detalhes da operação</h2><p id="subtituloHistorico"></p></div><button id="fecharDetalhesHistorico">&times;</button></div>
+        <div id="conteudoDetalhesHistorico" class="corpoDetalhesCautela"></div>
+    </div>
+</div>

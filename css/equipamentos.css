@@ -1,0 +1,817 @@
+.equipamentos-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/*====================================
+TÍTULO
+====================================*/
+
+.titulo-pagina{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.titulo-pagina h1{
+
+    color:#38431f;
+
+    font-size:30px;
+
+}
+
+.titulo-pagina span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+#btnNovoEquipamento{
+
+    background:#556B2F;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+#btnNovoEquipamento:hover{
+
+    background:#435523;
+
+}
+
+/*====================================
+CARDS
+====================================*/
+
+.cards-resumo{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:20px;
+
+}
+
+.cardResumo{
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+
+    border-left:6px solid #556B2F;
+
+    text-align:center;
+
+    border-left:0;
+
+    border-top:5px solid var(--caqui-escuro);
+
+}
+
+.cardResumo h3{
+
+    color:#556B2F;
+
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+    font-size:12px;
+
+}
+
+.cardResumo span{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#2f3817;
+
+}
+
+/*====================================
+PESQUISA
+====================================*/
+
+.barraPesquisa{
+
+    display:grid;
+
+    grid-template-columns:3fr 1fr 1fr;
+
+    gap:15px;
+
+}
+
+.barraPesquisa input,
+.barraPesquisa select{
+
+    padding:12px;
+
+    border-radius:8px;
+
+    border:1px solid #CCC;
+
+    font-size:14px;
+
+}
+
+/*====================================
+TABELA
+====================================*/
+
+.tabelaEquipamentos{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+
+}
+
+.tabelaEquipamentos th{
+
+    background:#556B2F;
+
+    color:white;
+
+    padding:14px;
+
+    text-align:left;
+
+}
+
+.tabelaEquipamentos td{
+
+    padding:12px;
+
+    border-bottom:1px solid #EEE;
+
+}
+
+.tabelaEquipamentos tbody tr:hover{
+
+    background:#f3f6ef;
+
+}
+
+/*====================================
+STATUS
+====================================*/
+
+.status{
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    color:white;
+
+    display:inline-block;
+
+}
+
+.statusDisponivel{
+
+    background:#198754;
+
+}
+
+.statusCautelado{
+
+    background:#0d6efd;
+
+}
+
+.statusManutencao{
+
+    background:#ffc107;
+
+    color:black;
+
+}
+
+.statusBaixado{
+
+    background:#dc3545;
+
+}
+
+/*====================================
+FOTO
+====================================*/
+
+.fotoEquipamentoTabela{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:8px;
+
+    object-fit:cover;
+
+}
+
+/*====================================
+BOTÕES
+====================================*/
+
+.btnEditar{
+
+    background:#0d6efd;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    margin-right:6px;
+
+}
+
+.btnExcluir{
+
+    background:#dc3545;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+}
+
+/*====================================
+MODAL
+====================================*/
+
+.modal{
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.oculto{
+
+    display:none;
+
+}
+
+#modalEditarCautela #dadosExternosEdicao.oculto,
+#modalEditarCautela #dadosExternosEdicao[hidden]{
+    display:none!important;
+}
+
+.paginaNovaCautela .secaoEquipamentosNovaCautela .listaEquipamentosCautela{
+    display:flex!important;
+    align-content:flex-start;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+}
+.paginaNovaCautela .secaoEquipamentosNovaCautela .pesquisaCautela{
+    flex:none;
+    width:auto;
+    min-height:58px;
+}
+.paginaNovaCautela .secaoEquipamentosNovaCautela .listaEquipamentosCautela>.grupoEquipamentos{
+    flex:1 1 calc(33.333% - 8px);
+    min-height:68px;
+    padding:16px 18px;
+}
+.paginaNovaCautela .secaoEquipamentosNovaCautela .listaEquipamentosCautela>.grupoEquipamentos>h3{
+    display:flex;
+    min-height:34px;
+    align-items:center;
+}
+.paginaNovaCautela .secaoEquipamentosNovaCautela .listaEquipamentosCautela>.grupoEquipamentos>h3::after{
+    margin-left:auto;
+}
+.paginaNovaCautela .secaoEquipamentosNovaCautela .listaEquipamentosCautela>.grupoEquipamentos.aberto{
+    flex-basis:100%;
+}
+@media(max-width:900px){
+    .paginaNovaCautela .secaoEquipamentosNovaCautela .listaEquipamentosCautela>.grupoEquipamentos{flex-basis:calc(50% - 8px)}
+}
+@media(max-width:650px){
+    .paginaNovaCautela .secaoEquipamentosNovaCautela .listaEquipamentosCautela>.grupoEquipamentos{flex-basis:100%}
+}
+
+.janelaModal{
+
+    width:950px;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+.cabecalhoModal{
+
+    background:#556B2F;
+
+    color:white;
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.cabecalhoModal h2{margin:0}.cabecalhoModal p{margin:5px 0 0;font-size:13px;opacity:.8}
+#btnFecharEquipamento{border:0;background:transparent;color:#fff;font-size:28px;line-height:1;cursor:pointer;padding:4px 8px}
+
+.corpoModal{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr;
+
+    gap:30px;
+
+    padding:25px;
+
+}
+
+.fotoEquipamento{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.fotoEquipamento img{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:10px;
+
+    border:2px solid #DDD;
+
+    object-fit:cover;
+
+}
+
+#btnFotoEquipamento{
+
+    width:180px;
+
+    padding:10px;
+
+    border:none;
+
+    background:#556B2F;
+
+    color:white;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.formulario{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #CCC;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+}
+
+.formulario textarea{
+
+    grid-column:span 2;
+
+    height:120px;
+
+    resize:none;
+
+}
+
+.rodapeModal{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    padding:20px;
+
+    background:#F4F4F4;
+
+}
+
+#btnCancelarEquipamento{
+
+    background:#999;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+#btnSalvarEquipamento{
+
+    background:#556B2F;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+/*====================================
+RESPONSIVO
+====================================*/
+
+@media(max-width:1200px){
+
+.cards-resumo{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.barraPesquisa{
+
+grid-template-columns:1fr;
+
+}
+
+.corpoModal{
+
+grid-template-columns:1fr;
+
+}
+
+.formulario{
+
+grid-template-columns:1fr;
+
+}
+
+.formulario textarea{
+
+grid-column:span 1;
+
+}
+
+}
+
+.campoQuantidade{display:flex;flex-direction:column;gap:6px;padding:12px;border:1px solid #d7c8aa;border-radius:9px;background:#faf6ed}
+.campoQuantidade span{font-size:13px;font-weight:700;color:#594b34}.campoQuantidade small{font-size:11px;color:#84765e}
+.campoQuantidade.oculto{display:none}.quantidadeTabela{display:inline-block;margin-left:5px;padding:3px 7px;border-radius:999px;background:#efe3c9;color:#725824;font-size:11px;font-weight:800}.quantidadeCauteladaTabela{display:block;width:max-content;margin:5px 0 0;padding:2px 6px;border-radius:6px;background:#f8dfda;color:#a13e30;font-size:10px;font-weight:800}
+.fotoEquipamentoVazia{width:42px;height:42px;display:grid;place-items:center;border-radius:9px;background:#eee9df;color:#8b7b5d}
+.acoesEquipamento{white-space:nowrap}.listaVaziaEquipamentos{text-align:center!important;padding:32px!important;color:#827661}
+.iconeCategoriaEquipamento{border:1px solid #ded4c5;background:#f4f0e8;color:#756447;transition:.18s}.iconeCategoriaEquipamento i{font-size:17px}.iconeCategoriaEquipamento.categoriaARMALONGA{background:#eee7d9;color:#705c3e}.iconeCategoriaEquipamento.categoriaARMACURTA{background:#f0e9df;color:#695746}.iconeCategoriaEquipamento.categoriaMUNICAO{background:#fff0d6;color:#936719}.iconeCategoriaEquipamento.categoriaRADIO{background:#e4edf0;color:#466873}.iconeCategoriaEquipamento.categoriaCOLETE{background:#e5efe8;color:#3f6d51}.iconeCategoriaEquipamento.categoriaOUTROS{background:#eeeaf2;color:#665775}
+.janelaModal{max-height:90vh;overflow:auto}.modal{padding:20px}
+
+.grupoEquipamentos{background:#fff;border:1px solid var(--borda);border-radius:12px;padding:14px 18px;margin:12px 0;box-shadow:0 4px 14px rgba(55,43,25,.06)}
+.grupoEquipamentos h3{margin:0 0 10px;color:var(--caqui-escuro);font-size:15px}.grupoEquipamentos label{display:block;padding:8px 3px;border-bottom:1px solid #f0ece4;cursor:pointer}.grupoEquipamentos label:last-child{border-bottom:0}
+.campoNomePolicial{flex:2.2!important;min-width:280px}
+
+/* Relatórios operacionais */
+.paginaRelatorios{display:flex;flex-direction:column;gap:18px}.painelRelatorio{background:#fff;border:1px solid #d9cdbb;border-radius:13px;box-shadow:0 7px 22px rgba(67,51,29,.08);overflow:hidden}.cabecalhoRelatorio{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 18px;background:linear-gradient(110deg,#fff,#f5efe5);border-bottom:1px solid #e1d7c8}.cabecalhoRelatorio h2{margin:0;color:#635236;font-size:17px}.cabecalhoRelatorio p{margin:4px 0 0;color:#8a7a63;font-size:12px}.filtrosRelatorio{display:flex;align-items:flex-end;justify-content:flex-end;gap:9px;flex:1}.cabecalhoRelatorio .filtrosRelatorio>input{width:min(390px,45%);min-width:230px}.cabecalhoRelatorio input{padding:10px 12px;border:1px solid #cfc0a8;border-radius:8px;background:#fff}.filtrosRelatorio label{display:flex;flex-direction:column;gap:3px;color:#77674f;font-size:10px;font-weight:700}.filtrosRelatorio input[type="date"]{width:145px;color:#5c503f;font:inherit}.rolagemRelatorio{max-height:300px;overflow:auto}.rolagemRelatorio .tabela{margin:0;border:0;border-radius:0;box-shadow:none}.rolagemRelatorio thead th{position:sticky;top:0;z-index:1}.tabelaCautelasRelatorio tbody tr{cursor:pointer}.tabelaCautelasRelatorio tbody tr:hover{background:#eadfcd!important}
+.janelaRelatorioCautela{width:min(900px,calc(100vw - 30px))!important}.documentoRelatorioCautela{margin:20px;padding:25px;background:#fff;border:1px solid #d8cbb7;color:#39342d}.cabecalhoDocumentoDemo{display:flex;align-items:center;justify-content:center;gap:20px;padding-bottom:17px;border-bottom:2px solid #7d6948;text-align:center}.cabecalhoDocumentoDemo img{width:72px;height:72px;object-fit:contain}.cabecalhoDocumentoDemo div{display:flex;flex-direction:column;gap:4px}.cabecalhoDocumentoDemo strong{color:#5e4e34}.cabecalhoDocumentoDemo span{font-size:12px}.documentoRelatorioCautela>h2{text-align:center;color:#685537;margin:20px 0}.dadosDocumentoCautela{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;background:#f7f2e9;padding:13px;border-radius:8px}.dadosDocumentoCautela p{margin:4px 0;font-size:12px}.documentoRelatorioCautela h3{color:#6c5839;margin:18px 0 8px}.documentoRelatorioCautela table{width:100%;border-collapse:collapse;font-size:11px}.documentoRelatorioCautela th{background:#7d6948;color:#fff;padding:8px;text-align:left}.documentoRelatorioCautela td{padding:8px;border-bottom:1px solid #e5ddd0}.operacaoHistorico{display:inline-block;padding:5px 8px;border-radius:7px;background:#eee5d7;color:#6d593b;font-size:11px;font-weight:800}.resumoOperacaoHistorico{padding:12px;margin-bottom:12px;background:#eee5d7;border-radius:8px;color:#594a35;font-size:12px}.filtrosHistorico{display:flex;align-items:flex-end;gap:12px;margin:0 0 15px}.filtroHistorico{width:min(680px,100%);margin:0}.filtroHistorico input{width:100%}.filtroDataHistorico{display:flex;flex-direction:column;gap:4px;color:#75664f;font-size:10px;font-weight:750;text-transform:uppercase}.filtroDataHistorico input{min-width:155px;padding:10px 11px;border:1px solid #d5c9b6;border-radius:9px;background:#fff;color:#51483b;font:inherit}@media(max-width:650px){.filtrosHistorico{align-items:stretch;flex-direction:column}.filtroDataHistorico input{width:100%}}
+.tabelaAlteracoesRelatorio td{vertical-align:top}.tabelaAlteracoesRelatorio th:nth-child(1){min-width:108px}.tipoAlteracaoRelatorio{display:inline-block;padding:4px 7px;border-radius:6px;background:#eee8de;color:#695b46;font-size:9px;font-weight:800;white-space:nowrap}.tipoAlteracaoRelatorio.tipoADICIONADO{background:#e4f2e9;color:#26704b}.tipoAlteracaoRelatorio.tipoREMOVIDO{background:#f7e5e1;color:#9b4037}.tipoAlteracaoRelatorio.tipoQUANTIDADEALTERADA{background:#fff0d5;color:#886018}
+.acoesSelecaoRelatorio{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 18px;border-bottom:1px solid #e1d7c8;background:#f8f4ed}.acoesSelecaoRelatorio span{color:#76664e;font-size:12px;font-weight:700}.acoesSelecaoRelatorio button{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border:0;border-radius:8px;background:#786344;color:#fff;font-weight:750;cursor:pointer}.acoesSelecaoRelatorio button:disabled{opacity:.48;cursor:not-allowed}.colunaSelecaoRelatorio{width:48px;text-align:center!important}.tabelaCautelasRelatorio input[type="checkbox"]{width:17px;height:17px;accent-color:#786344;cursor:pointer}.tabelaCautelasRelatorio tr.registroRelatorioSelecionado{background:#eee3d1!important}.tabelaCautelasRelatorio td:first-child{text-align:center}
+.acoesSelecaoRelatorio>div{display:flex;gap:8px;flex-wrap:wrap}
+.relatorioSelecionadoVisualizacao{padding:8px 0 28px;margin-top:22px;border-bottom:3px double #b9a98f}.relatorioSelecionadoVisualizacao:last-child{border-bottom:0}.relatorioSelecionadoVisualizacao>h2{text-align:left!important}
+.tabelaRelatorioExternas tbody tr{cursor:pointer}.tabelaRelatorioExternas tbody tr:hover{background:#eee7f3!important}.tabelaRelatorioExternas input[type="checkbox"]{width:17px;height:17px;accent-color:#665775;cursor:pointer}.tabelaRelatorioExternas td:first-child{text-align:center}.tabelaExternasCautela .btnDetalhesCautela{background:#8a7757!important}.tabelaExternasCautela .btnEditarCautela{background:#695a42!important}.tabelaExternasCautela .btnReceberCautela{background:#52633d!important}
+@media(max-width:700px){.cabecalhoRelatorio{align-items:flex-start;flex-direction:column}.filtrosRelatorio{width:100%;align-items:stretch;flex-direction:column}.cabecalhoRelatorio .filtrosRelatorio>input,.filtrosRelatorio input[type="date"]{width:100%;min-width:0}.dadosDocumentoCautela{grid-template-columns:1fr}.documentoRelatorioCautela{margin:8px;padding:12px}.cabecalhoDocumentoDemo{align-items:center;flex-direction:column}}
+
+/* Cautelas — tabelas e janelas em temática cáqui */
+.tabelaResponsiva{overflow-x:auto;border-radius:13px}.tabelaCaqui{border:1px solid #d8cbb8;box-shadow:0 8px 24px rgba(66,50,28,.09)}.tabelaCaqui th{background:linear-gradient(180deg,#897757,#705d3f)!important;color:#fff!important}.tabelaCaqui tbody tr:nth-child(even){background:#fcfaf6}.tabelaCaqui tbody tr:hover{background:#f3ecdf}
+.acoesCautelaAberta{display:flex;gap:7px;flex-wrap:wrap}.acoesCautelaAberta button{border:0;border-radius:7px;padding:8px 10px;color:#fff;font-weight:700;cursor:pointer}.btnDetalhesCautela{background:#8a7757}.btnEditarCautela{background:#695a42}.btnReceberCautela{background:#52633d}.dataHoraCautela{display:flex;align-items:center;gap:7px;white-space:nowrap;color:#655844}.estadoVazioTabela{text-align:center!important;padding:32px!important;color:#877964}
+.paginaCautelasAbertas{display:flex;flex-direction:column;gap:18px}.cabecalhoTabelaPermanente{display:flex;align-items:center;justify-content:space-between;margin-top:8px;padding:15px 18px;border:1px solid #d8cbb8;border-radius:12px;background:linear-gradient(110deg,#fff 55%,#f1eadf)}.cabecalhoTabelaPermanente h2{margin:0;color:#574a37;font-size:17px}.cabecalhoTabelaPermanente p{margin:4px 0 0;color:#887a65;font-size:11px}.cabecalhoTabelaPermanente>span{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:#e9e0d1;color:#6b593e;font-size:11px;font-weight:800}
+.filtroTabelaCautelas{width:min(520px,100%);margin-bottom:-8px}.filtroTabelaPermanentes{border-color:#b9a57f}.tabelaPermanentesCautela{border:2px solid #9b8153;border-radius:13px;box-shadow:0 8px 25px rgba(84,61,26,.14)}.tabelaPermanentesCautela .tabelaCaqui th{background:linear-gradient(180deg,#77613d,#58482e)!important}.tabelaPermanentesCautela tbody tr{background:#fffdf7}
+.modalCautela{z-index:1250!important;padding:20px;background:rgba(38,30,20,.7)!important;backdrop-filter:blur(3px)}.modalCautela .janelaModal{width:min(720px,calc(100vw - 30px));max-height:88vh;overflow:auto;border:1px solid #a99572;border-radius:15px;box-shadow:0 24px 70px rgba(30,22,13,.38)}.modalCautela .cabecalhoModal{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:linear-gradient(120deg,#6d5a3c,#927d58);color:#fff}.modalCautela .cabecalhoModal h2{margin:0}.modalCautela .cabecalhoModal p{margin:4px 0 0;font-size:12px;opacity:.82}.modalCautela .cabecalhoModal button{border:0;background:transparent;color:#fff;font-size:27px;cursor:pointer}
+.corpoDetalhesCautela,.corpoEdicaoCautela,.corpoReceberCautela{padding:20px;background:#f7f3eb}.itemDetalheCautela{display:flex;align-items:center;gap:12px;padding:13px;margin-bottom:9px;background:#fff;border:1px solid #ded3c1;border-left:4px solid #887451;border-radius:10px}.itemDetalheCautela>i{width:38px;height:38px;display:grid;place-items:center;border-radius:9px;background:#eee5d6;color:#745f3d}.itemDetalheCautela>div{display:flex;flex-direction:column;gap:3px}.itemDetalheCautela strong{color:#483d2e}.itemDetalheCautela span{font-size:12px;color:#84755f}
+.corpoEdicaoCautela>input{width:100%;padding:11px 12px;margin-bottom:13px;border:1px solid #cfc1aa;border-radius:9px}.listaEdicaoCautela{display:flex;flex-direction:column;gap:8px;max-height:430px;overflow:auto}.itemEdicaoCautela{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:11px;padding:11px 12px;background:#fff;border:1px solid #ded3c1;border-radius:9px;cursor:pointer}.itemEdicaoCautela>div{display:flex;flex-direction:column}.itemEdicaoCautela span,.itemEdicaoCautela small{font-size:11px;color:#82745e}.quantidadeEdicaoCautela{width:70px;padding:8px;border:1px solid #cdbd9f;border-radius:7px}
+.janelaEditarCautela{width:min(1050px,calc(100vw - 30px))!important}.corpoEdicaoCautela{display:flex;flex-direction:column;gap:16px;padding:16px;background:#eee8dd}.secaoEdicaoCautela{overflow:hidden;border:1px solid #ddd2c0;border-radius:13px;background:#fff}.pesquisaEdicaoCautela{margin:14px 16px 2px}.pesquisaEdicaoCautela input{width:100%}.corpoEdicaoCautela .listaEdicaoCautela{display:flex;max-height:none;padding:12px 16px 16px;overflow:visible;flex-direction:column;gap:10px}.corpoEdicaoCautela .grupoEquipamentos{margin:0}.corpoEdicaoCautela .itemEdicaoCautela{display:flex;grid-template-columns:none}.controleQuantidadeEdicao{display:flex!important;align-items:center;flex:none;flex-direction:row!important;gap:5px}.corpoEdicaoCautela .listaSelecionadosCautela{max-height:260px;overflow-y:auto}.corpoEdicaoCautela .cabecalhoSecaoCautela{padding:14px 16px}
+.observacaoEdicaoCautela{display:block;width:calc(100% - 32px);min-height:90px;margin:0 16px 16px;padding:11px 12px;border:1px solid #d5c9b6;border-radius:9px;background:#fdfcf9;color:#453d32;font:inherit;line-height:1.45;resize:vertical;outline:none}.observacaoEdicaoCautela:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.12);background:#fff}
+.corpoReceberCautela{text-align:center}.iconeConfirmacaoCautela{position:relative;width:55px;height:55px;display:block;margin:0 auto 12px;padding:0;border-radius:50%;background:#e7dcc8;color:#745f3e}.iconeConfirmacaoCautela>i{position:absolute;top:50%;left:50%;margin:0!important;padding:0!important;font-size:21px;line-height:1;transform:translate(-50%,-50%)}.corpoReceberCautela label{display:flex;flex-direction:column;gap:6px;text-align:left;margin-top:17px}.corpoReceberCautela label span{font-size:12px;font-weight:700;color:#65553d}.corpoReceberCautela input,.corpoReceberCautela textarea{padding:11px;border:1px solid #cdbc9f;border-radius:8px;background:#fff;color:#453d32;font:inherit;outline:none}.corpoReceberCautela textarea{min-height:82px;line-height:1.45;resize:vertical}.corpoReceberCautela input:focus,.corpoReceberCautela textarea:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.12)}.modalCautela .rodapeModal{padding:14px 20px;background:#eae1d3;border-top:1px solid #d5c7b1}.modalCautela .rodapeModal button{padding:10px 14px;border-radius:8px;border:1px solid #c8b99f;background:#fff;color:#62543f;font-weight:700;cursor:pointer}.modalCautela .rodapeModal button:last-child{border:0;background:#6f5c3d;color:#fff}
+.responsavelCautela{display:flex;align-items:center;gap:4px;margin-top:6px;color:#6f5c3f;font-size:10px;font-weight:700}.quantidadeCautela{border:0;cursor:pointer}.quantidadeCautela:hover{background:#e5d9c5}
+@media(max-width:650px){.acoesCautelaAberta{min-width:260px}.itemEdicaoCautela{grid-template-columns:auto 1fr}.quantidadeEdicaoCautela{grid-column:2}.modalCautela{padding:8px}}
+
+/* Nova cautela */
+.paginaNovaCautela{display:flex;flex-direction:column;gap:18px;max-width:1180px;margin:0 auto}.cabecalhoNovaCautela{margin-bottom:4px}.etapaCautela{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid #cfe2d7;border-radius:999px;background:#f1f8f4;color:#176c49;font-size:12px;font-weight:750}
+.secaoNovaCautela{background:#fff;border:1px solid #ddd2c0;border-radius:15px;box-shadow:0 8px 24px rgba(64,48,26,.08);overflow:hidden}.cabecalhoSecaoCautela{display:flex;align-items:center;gap:12px;padding:17px 20px;border-bottom:1px solid #e8e0d3;background:linear-gradient(110deg,#fff 55%,#f6f1e8)}.cabecalhoSecaoCautela h2{margin:0;color:#574a37;font-size:17px}.cabecalhoSecaoCautela p{margin:3px 0 0;color:#8a7b66;font-size:11px}.numeroEtapaCautela{width:34px;height:34px;display:grid;place-items:center;flex:none;border-radius:10px;background:#7c6949;color:#fff;font-size:13px;font-weight:800}.totalSelecionadosCautela{margin-left:auto;padding:6px 10px;border-radius:999px;background:#eee6d8;color:#68573c;font-size:11px;font-weight:800;white-space:nowrap}
+.buscaPolicialCautela{display:flex;align-items:flex-end;gap:10px;padding:18px 20px 12px}.campoAutocompleteCautela{display:flex;min-width:0;flex:1;flex-direction:column;gap:5px}.campoAutocompleteCautela>span{color:#75664f;font-size:10px;font-weight:750;text-transform:uppercase}.campoComIcone{position:relative;flex:1}.campoComIcone i{position:absolute;top:50%;left:13px;z-index:1;color:#917e5e;transform:translateY(-50%)}.campoComIcone input{width:100%;padding:11px 12px 11px 38px;border:1px solid #d5c9b6;border-radius:9px;background:#fff;font:inherit;outline:none}.campoComIcone input:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.12)}.buscaPolicialCautela button{display:flex;align-items:center;gap:7px;padding:10px 17px;border:0;border-radius:9px;background:linear-gradient(135deg,#806c49,#665436);color:#fff;font-weight:750;cursor:pointer}
+.dadosPolicialCautela{display:grid;grid-template-columns:2.2fr repeat(3,1fr);gap:11px;padding:0 20px 20px}.dadosPolicialCautela label{display:flex;flex-direction:column;gap:5px}.dadosPolicialCautela label span{color:#75664f;font-size:10px;font-weight:750;text-transform:uppercase}.dadosPolicialCautela input{width:100%;padding:10px 11px;border:1px solid #e0d8cc;border-radius:8px;background:#f8f6f1;color:#51483b;font:inherit}
+.pesquisaCautela{margin:16px 20px 5px}.listaEquipamentosCautela{display:flex;flex-direction:column;gap:12px;padding:16px 20px}.listaEquipamentosCautela .grupoEquipamentos{overflow:hidden;box-shadow:none}.pesquisaCategoriaEquipamento{display:none;margin:10px 12px}.grupoEquipamentos.aberto .pesquisaCategoriaEquipamento{display:block}.itensCategoriaEquipamento{display:none;max-height:310px;padding:0 12px 12px;overflow-y:auto;scrollbar-color:#a18e68 #eee8dd;scrollbar-width:thin}.grupoEquipamentos.aberto .itensCategoriaEquipamento{display:block}.itensCategoriaEquipamento::-webkit-scrollbar{width:9px}.itensCategoriaEquipamento::-webkit-scrollbar-track{background:#eee8dd;border-radius:9px}.itensCategoriaEquipamento::-webkit-scrollbar-thumb{background:#a18e68;border-radius:9px}.itemEquipamentoCautela.ocultoPorPesquisa{display:none!important}.semResultadoCategoria{margin:12px 2px;padding:15px;border:1px dashed #d6cbb9;border-radius:8px;color:#887a65;font-size:12px;text-align:center}.listaSelecionadosCautela{padding:12px 20px;min-height:92px}.estadoVazioSelecionados{display:flex;align-items:center;justify-content:center;flex-direction:column;padding:17px;color:#968975}.estadoVazioSelecionados i{margin-bottom:7px;font-size:22px}.estadoVazioSelecionados strong{color:#6d6250;font-size:12px}.estadoVazioSelecionados span{margin-top:3px;font-size:10px}.rodapeNovaCautela{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 20px;border-top:1px solid #e2d9ca;background:#f5f1e9}.rodapeNovaCautela>span{color:#82745f;font-size:11px}.rodapeNovaCautela>span i{margin-right:5px;color:#6d7d58}.rodapeNovaCautela .botaoPrincipal{display:flex;align-items:center;gap:8px;padding:11px 17px;background:linear-gradient(135deg,#168557,#0f6845);box-shadow:0 5px 13px rgba(15,104,69,.2)}
+.campoObservacaoCautela{display:flex;flex-direction:column;gap:7px;margin:0 20px 18px}.campoObservacaoCautela>span{color:#665842;font-size:11px;font-weight:750}.campoObservacaoCautela>span i{margin-right:5px;color:#8c7959}.campoObservacaoCautela textarea{min-height:82px;padding:11px 12px;border:1px solid #d5c9b6;border-radius:9px;background:#fdfcf9;color:#453d32;font:inherit;line-height:1.45;resize:vertical;outline:none}.campoObservacaoCautela textarea:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.12);background:#fff}.observacaoDocumentoCautela{grid-column:1/-1;padding-top:7px;border-top:1px solid #e2d8c8;white-space:pre-wrap}
+.modalConfirmarCautela .janelaModal{width:min(460px,calc(100vw - 30px))}.corpoConfirmacaoCautela{padding:22px;text-align:center;background:#f8f5ef}.corpoConfirmacaoCautela>strong{display:block;color:#504534;font-size:16px}.corpoConfirmacaoCautela>p{margin:6px auto 18px;max-width:340px;color:#82745f;font-size:12px;line-height:1.45}.corpoConfirmacaoCautela label{display:flex;flex-direction:column;gap:6px;text-align:left}.corpoConfirmacaoCautela label span{color:#675842;font-size:11px;font-weight:750}.corpoConfirmacaoCautela input{padding:11px 12px;border:1px solid #cdbc9f;border-radius:8px;font:inherit;outline:none}.corpoConfirmacaoCautela input:focus{border-color:#806c49;box-shadow:0 0 0 3px rgba(128,108,73,.13)}.erroConfirmacaoCautela{display:block;min-height:16px;margin-top:7px;color:#b23b32;font-size:11px;text-align:left}.modalConfirmarCautela .rodapeModal{display:flex;justify-content:flex-end;gap:8px}.modalConfirmarCautela .rodapeModal button:disabled{opacity:.55;cursor:wait}
+@media(max-width:760px){.dadosPolicialCautela{grid-template-columns:1fr 1fr}.dadosPolicialCautela .campoNomePolicial{grid-column:1/-1}.buscaPolicialCautela{align-items:stretch;flex-direction:column}.buscaPolicialCautela button{justify-content:center}.rodapeNovaCautela{align-items:stretch;flex-direction:column}.rodapeNovaCautela .botaoPrincipal{justify-content:center}.cabecalhoNovaCautela{align-items:flex-start}.etapaCautela{display:none}}
+
+/* Cadastro e listagem de equipamentos — identidade cáqui */
+.equipamentos-container .cards-resumo{gap:14px}.equipamentos-container .cardResumo{border:1px solid #ded3c1;border-top:4px solid #806d4d;background:linear-gradient(145deg,#fff,#faf7f1);box-shadow:0 7px 20px rgba(71,55,31,.08)}
+.equipamentos-container button.cardResumo{font:inherit;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s}.equipamentos-container button.cardResumo:hover{transform:translateY(-2px);border-color:#a89470;box-shadow:0 10px 24px rgba(71,55,31,.13)}.equipamentos-container button.cardResumo.selecionado{border-color:#766242;background:#f3ecdf;box-shadow:0 0 0 3px rgba(128,108,73,.14)}
+.totalCategoriaEquipamentos{overflow:hidden;border:1px solid #d7c9b4;border-radius:12px;background:#fff;box-shadow:0 5px 16px rgba(71,54,30,.07)}.cabecalhoTotalCategoriaEquipamentos{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 18px;background:linear-gradient(110deg,#fff,#f3ede3)}.cabecalhoTotalCategoriaEquipamentos>div{display:flex;align-items:center;gap:10px}.cabecalhoTotalCategoriaEquipamentos i{width:38px;height:38px;display:grid;place-items:center;border-radius:9px;background:#e7dece;color:#705c3d}.cabecalhoTotalCategoriaEquipamentos span{color:#81725c;font-size:11px}.cabecalhoTotalCategoriaEquipamentos h2{margin:2px 0 0;color:#514532;font-size:17px}.cabecalhoTotalCategoriaEquipamentos button{padding:8px 11px;border:1px solid #cbbda7;border-radius:8px;background:#fff;color:#675942;font-weight:700;cursor:pointer}.totalCategoriaEquipamentos .tabelaResponsiva{border-top:1px solid #dfd5c6;border-radius:0}.totalCategoriaEquipamentos table{margin:0;border:0;border-radius:0;box-shadow:none}.totalCategoriaEquipamentos th:last-child,.totalCategoriaEquipamentos td:last-child{width:160px;text-align:center}
+.equipamentos-container .cardResumo h3{color:#756447}.equipamentos-container .cardResumo span{color:#443a2c}.equipamentos-container .barraPesquisa{padding:14px;background:#f7f3eb;border:1px solid #ded4c4;border-radius:12px}
+.equipamentos-container .tabelaEquipamentos{border:1px solid #d6c9b5;box-shadow:0 8px 24px rgba(67,50,27,.09)}.equipamentos-container .tabelaEquipamentos th{background:linear-gradient(180deg,#897757,#725f40);color:#fff;border:0;font-size:12px;letter-spacing:.02em}
+.equipamentos-container .tabelaEquipamentos td{border-bottom:1px solid #eee7dc;color:#4e4538}.equipamentos-container .tabelaEquipamentos tbody tr:nth-child(even){background:#fcfaf6}.equipamentos-container .tabelaEquipamentos tbody tr:hover{background:#f3ecdf}
+.equipamentos-container .tabelaEquipamentos tr.equipamentoVencido{background:#fff3f0}.equipamentos-container .tabelaEquipamentos tr.equipamentoVencido:hover{background:#fde7e2}.validadeEquipamento{white-space:nowrap}.validadeVencida{color:#a53830;font-weight:800}.alertaValidadeEquipamento{display:flex;align-items:center;gap:4px;margin-top:4px;color:#b13b32;font-size:9px;font-weight:800;white-space:nowrap}
+#modalEquipamento{z-index:1200;padding:16px;background:rgba(39,32,22,.68);backdrop-filter:blur(3px)}#modalEquipamento .janelaModal{display:flex;width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:hidden;flex-direction:column;border:1px solid #a99572;border-radius:16px;box-shadow:0 24px 70px rgba(31,24,14,.35)}
+#modalEquipamento .cabecalhoModal{flex:none;padding:16px 24px;background:linear-gradient(120deg,#6e5c3f,#927d58);border-bottom:1px solid #bba986}#modalEquipamento .corpoModal{display:block;min-height:0;padding:16px 24px;overflow-y:auto;overscroll-behavior:contain;background:#f5f1e9;scrollbar-color:#a18e68 #eee8dd;scrollbar-width:thin}
+#modalEquipamento .corpoModal::-webkit-scrollbar{width:9px}#modalEquipamento .corpoModal::-webkit-scrollbar-track{background:#eee8dd}#modalEquipamento .corpoModal::-webkit-scrollbar-thumb{background:#a18e68;border-radius:9px}
+#modalEquipamento .formularioEquipamento{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:none;padding:0;background:transparent;border:0;box-shadow:none}.secaoFormulario{display:grid;grid-template-columns:1fr 1fr;gap:13px;padding:17px;background:#fff;border:1px solid #ded4c4;border-radius:12px;box-shadow:0 4px 13px rgba(71,54,30,.05)}
+.secaoFormulario h3{grid-column:1/-1;margin:0 0 3px;padding-bottom:10px;border-bottom:1px solid #eee7dc;color:#6d5b3d;font-size:14px}.secaoFormulario h3 i{width:22px;color:#9a8057}.secaoSituacao{grid-column:1/-1;grid-template-columns:1fr 1fr}
+.campoFormulario{display:flex;flex-direction:column;gap:6px;min-width:0}.campoFormulario>span{font-size:12px;font-weight:700;color:#615440}.campoFormulario>span b{color:#a05842}
+#modalEquipamento .campoFormulario input,#modalEquipamento .campoFormulario select,#modalEquipamento .campoFormulario textarea{width:100%;padding:10px 11px;border:1px solid #d6cbb9;border-radius:8px;background:#fdfcf9;color:#39332b;outline:none;transition:.18s}
+#modalEquipamento .campoFormulario input:focus,#modalEquipamento .campoFormulario select:focus,#modalEquipamento .campoFormulario textarea:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.13);background:#fff}.campoObservacao{grid-column:1/-1}.campoObservacao textarea{height:74px!important;resize:vertical!important}
+.campoQuantidade{padding:10px;background:#f6eddb;border-color:#cfbb95}.campoQuantidade small{color:#82745f}#modalEquipamento .rodapeModal{display:flex;align-items:center;flex:none;padding:12px 24px;background:#ebe3d6;border-top:1px solid #d6c9b4}.erroEquipamento{min-height:16px;margin-right:auto;color:#a93830;font-size:11px;font-weight:750}.campoInvalido{border-color:#b64037!important;box-shadow:0 0 0 3px rgba(182,64,55,.12)!important}#modalEquipamento .rodapeModal button:disabled{opacity:.55;cursor:wait}
+#modalEquipamento #btnCancelarEquipamento{background:#fff;color:#665a48;border:1px solid #cbbda7}#modalEquipamento #btnSalvarEquipamento{background:linear-gradient(135deg,#806c49,#665436);box-shadow:0 5px 12px rgba(77,59,33,.2)}#modalEquipamento #btnSalvarEquipamento:disabled{opacity:.55;cursor:wait}
+@media(max-width:760px){#modalEquipamento{padding:8px;align-items:stretch}#modalEquipamento .janelaModal{width:100%;max-height:calc(100vh - 16px)}#modalEquipamento .cabecalhoModal{padding:13px 15px}#modalEquipamento .corpoModal{padding:12px}#modalEquipamento .rodapeModal{padding:10px 12px}.secaoFormulario{padding:13px}#modalEquipamento .formularioEquipamento{grid-template-columns:1fr}.secaoSituacao{grid-column:auto}.secaoFormulario{grid-template-columns:1fr}.campoObservacao{grid-column:auto}.equipamentos-container{overflow-x:auto}.equipamentos-container .tabelaEquipamentos{min-width:1050px}}
+.tabelaScrollCautelas{max-height:320px;overflow-y:auto;border:1px solid var(--borda);border-radius:12px}.tabelaScrollCautelas #tabelaCautelas{margin:0;border:0;box-shadow:none;border-radius:0}.tabelaScrollCautelas thead th{position:sticky;top:0;z-index:1}.tabelaScrollCautelas::-webkit-scrollbar{width:9px}.tabelaScrollCautelas::-webkit-scrollbar-thumb{background:#a18e68;border-radius:9px}
+.pagina .linha #nomePolicial{flex:3!important;min-width:320px}.pagina .linha #graduacaoPolicial{flex:1!important;min-width:140px}.pagina .linha #pelotaoPolicial{flex:1.4!important;min-width:185px}.pagina .linha #funcaoPolicial{flex:1.8!important;min-width:220px}.pagina .linha #buscarPolicial{flex:1 1 420px;min-width:260px}.pagina .linha #btnBuscarPolicial{flex:0 0 auto;min-width:150px;padding:11px 20px;background:linear-gradient(135deg,#8b795a,#6e5c40);box-shadow:0 5px 12px rgba(71,54,28,.2)}.equipamentoSelecionado{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border:1px solid var(--borda);border-left:4px solid var(--caqui-escuro);border-radius:10px;padding:10px 12px;margin:8px 0}.equipamentoSelecionado button{border:0;border-radius:8px;padding:8px 13px;background:#f8e4e0;color:#a53a31;font-weight:700;cursor:pointer;transition:.2s}.equipamentoSelecionado button:hover{background:#c64a40;color:#fff;transform:translateY(-1px)}
+.pagina .linha #graduacaoPolicial{min-width:150px}.pagina .linha #pelotaoPolicial{min-width:180px}.pagina .linha #funcaoPolicial{min-width:240px}.grupoEquipamentos h3{cursor:pointer;user-select:none}.grupoEquipamentos h3::after{content:"+";float:right;font-size:20px}.grupoEquipamentos:not(.aberto) label{display:none}.grupoEquipamentos.aberto h3::after{content:"−"}
+
+/* ==================================================
+   NOVA CAUTELA — IDENTIFICAÇÃO DOS EQUIPAMENTOS
+================================================== */
+
+.itemEquipamentoCautela {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 12px 14px;
+    margin-top: 8px;
+    border: 1px solid #e1d8ca;
+    border-radius: 9px;
+    background: #fff;
+    cursor: pointer;
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.itemEquipamentoCautela:hover {
+    border-color: #a99573;
+    background: #fcfaf6;
+    box-shadow: 0 4px 12px rgba(70, 55, 32, .08);
+}
+
+.itemEquipamentoCautela input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin-top: 3px;
+    accent-color: #6f7d55;
+    flex: none;
+}
+
+.dadosEquipamentoCautela {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dadosEquipamentoCautela > strong {
+    color: #4e4333;
+    font-size: 13px;
+}
+
+.identificadoresEquipamentoCautela {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+}
+
+.identificadoresEquipamentoCautela span {
+    color: #7b6d59;
+    font-size: 11px;
+}
+
+.identificadoresEquipamentoCautela b {
+    color: #62543f;
+    font-weight: 750;
+}
+
+.dadosSelecionadoCautela {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.dadosSelecionadoCautela strong {
+    color: #4e4333;
+    font-size: 12px;
+}
+
+.dadosSelecionadoCautela span {
+    color: #7c6e59;
+    font-size: 10px;
+}
+
+.equipamentoSelecionado {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    margin-bottom: 7px;
+    border: 1px solid #e1d8ca;
+    border-radius: 9px;
+    background: #fcfaf6;
+}
+
+.equipamentoSelecionado button {
+    flex: none;
+}
+
+.cabecalhoTabelaExterna{margin-top:24px;background:linear-gradient(110deg,#f4f0f7,#fff)}.cabecalhoTabelaExterna span{background:#665775!important}.tabelaExternasCautela{border:2px solid #766487;border-radius:12px;background:#faf8fc}.painelRelatorioExterno{border-left:5px solid #766487}
+
+.formularioExternoCautela{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;padding:16px 20px 20px}.formularioExternoCautela label{display:flex;flex-direction:column;gap:5px}.formularioExternoCautela label>span{color:#75664f;font-size:10px;font-weight:800;text-transform:uppercase}.formularioExternoCautela input,.formularioExternoCautela textarea{width:100%;padding:10px 11px;border:1px solid #d7cbb9;border-radius:8px;background:#fff;color:#453d32;font:inherit;outline:none}.formularioExternoCautela input:focus,.formularioExternoCautela textarea:focus{border-color:#8b7652;box-shadow:0 0 0 3px rgba(139,118,82,.12)}.formularioExternoCautela .campoLargo{grid-column:span 2}@media(max-width:750px){.formularioExternoCautela{grid-template-columns:1fr}.formularioExternoCautela .campoLargo{grid-column:auto}}
+
+/* Nova cautela compacta: todos os grupos permanecem visíveis na área útil */
+.paginaNovaCautela:not(.paginaCautelaExterna){height:calc(100vh - 108px);max-width:none;gap:10px;overflow:hidden}.paginaNovaCautela:not(.paginaCautelaExterna) .cabecalhoNovaCautela{min-height:44px;margin:0}.paginaNovaCautela:not(.paginaCautelaExterna) .secaoIdentificacaoNovaCautela{flex:none}.paginaNovaCautela:not(.paginaCautelaExterna) .cabecalhoSecaoCautela{padding:10px 14px}.paginaNovaCautela:not(.paginaCautelaExterna) .numeroEtapaCautela{width:29px;height:29px}.paginaNovaCautela:not(.paginaCautelaExterna) .buscaPolicialCautela{padding:9px 14px 6px}.paginaNovaCautela:not(.paginaCautelaExterna) .dadosPolicialCautela{padding:6px 14px 10px}.paginaNovaCautela:not(.paginaCautelaExterna) .dadosPolicialCautela input{padding:8px 9px}.gradeOperacaoNovaCautela{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(330px,.85fr);min-height:0;flex:1;gap:10px}.gradeOperacaoNovaCautela>.secaoNovaCautela{display:flex;min-height:0;flex-direction:column}.secaoEquipamentosNovaCautela .pesquisaCautela{margin:9px 12px 2px}.secaoEquipamentosNovaCautela .listaEquipamentosCautela{min-height:0;padding:7px 12px 12px;overflow-y:auto}.secaoEquipamentosNovaCautela .itensCategoriaEquipamento{max-height:220px}.secaoSelecionadosNovaCautela .listaSelecionadosCautela{min-height:0;flex:1;padding:7px 12px;overflow-y:auto}.secaoSelecionadosNovaCautela .campoObservacaoCautela{margin:5px 12px 8px}.secaoSelecionadosNovaCautela .campoObservacaoCautela textarea{min-height:48px;max-height:65px}.secaoSelecionadosNovaCautela .rodapeNovaCautela{padding:9px 12px}.vinculoMunicaoArma{display:grid;grid-template-columns:minmax(160px,1fr) 90px;gap:7px;width:min(360px,45%);padding:7px;border:1px solid #dfd2bc;border-radius:8px;background:#f8f3ea;cursor:default}.vinculoMunicaoArma>div,.quantidadeDisponivelCautela{display:flex;flex-direction:column;gap:3px}.vinculoMunicaoArma span,.quantidadeDisponivelCautela span{color:#756348;font-size:9px;font-weight:800;text-transform:uppercase}.vinculoMunicaoArma select,.vinculoMunicaoArma input,.quantidadeDisponivelCautela input{width:100%;padding:6px 7px;border:1px solid #cdbd9f;border-radius:6px;background:#fff;color:#4f4435;font:inherit;font-size:11px}.quantidadeDisponivelCautela{width:90px;padding:7px;border-radius:8px;background:#f4eee4;cursor:default}@media(max-width:900px),(max-height:680px){.paginaNovaCautela:not(.paginaCautelaExterna){height:auto;overflow:visible}.gradeOperacaoNovaCautela{grid-template-columns:1fr}.secaoEquipamentosNovaCautela .listaEquipamentosCautela,.secaoSelecionadosNovaCautela .listaSelecionadosCautela{max-height:420px}.vinculoMunicaoArma{width:100%}}
+
+.vinculoMunicaoDesabilitado{opacity:.58}.vinculoMunicaoDesabilitado select,.vinculoMunicaoDesabilitado input{cursor:not-allowed}
+
+/* Calibre e quantidade da munição — alinhamento compartilhado entre cautelas */
+.itemEquipamentoCautela:has(.vinculoMunicaoArma),.itemEdicaoCautela:has(.vinculoMunicaoArma){flex-wrap:wrap}
+.vinculoMunicaoArma{
+    grid-template-columns:minmax(140px,150px) minmax(105px,112px);
+    width:min(290px,100%);
+    max-width:100%;
+    min-width:0;
+    flex:0 1 290px;
+    gap:10px;
+    padding:9px;
+    overflow:hidden;
+    box-sizing:border-box;
+}
+.vinculoMunicaoArma>div{min-width:0}
+.vinculoMunicaoArma span{
+    display:flex;
+    align-items:flex-end;
+    min-height:22px;
+    line-height:1.2;
+}
+.vinculoMunicaoArma select,.vinculoMunicaoArma input{
+    display:block;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    height:36px;
+    margin:0;
+    box-sizing:border-box;
+}
+#modalEditarCautela .vinculoMunicaoArma{margin-left:auto}
+@media(max-width:520px){
+    .vinculoMunicaoArma{grid-template-columns:minmax(130px,1.3fr) minmax(100px,1fr);gap:7px;padding:7px}
+}
+
+.grupoEquipamentos:not(.aberto) .itemEquipamentoCautela{display:none}.itemEquipamentoCautela.categoria-MUNICAO .identificadoresEquipamentoCautela span:nth-child(2),.itemEquipamentoCautela.categoria-MUNICAO .identificadoresEquipamentoCautela span:nth-child(3){display:none}
+
+/* Categorias compactas e uniformes na seleção de equipamentos */
+.secaoEquipamentosNovaCautela .listaEquipamentosCautela{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px}.secaoEquipamentosNovaCautela .grupoEquipamentos{min-width:0;margin:0;padding:10px 12px}.secaoEquipamentosNovaCautela .grupoEquipamentos h3{margin:0;font-size:13px}.secaoEquipamentosNovaCautela .grupoEquipamentos.aberto{grid-column:1/-1}.quantidadeSelecionadaDestaque{width:max-content;margin-top:3px;padding:5px 8px;border-radius:7px;background:#efe3c9;color:#6d5221!important;font-weight:800}.quantidadeSelecionadaDestaque b{font-size:15px;color:#8b5f13}.materiaisRecebimentoCautela{margin-bottom:16px;padding:12px;border:1px solid #d8cbb7;border-radius:10px;background:#fff;text-align:left}.materiaisRecebimentoCautela h3{margin:0 0 9px;color:#604f35;font-size:14px}.itemRecebimentoCautela{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 7px;border-bottom:1px solid #eee6da}.itemRecebimentoCautela:last-child{border-bottom:0}.itemRecebimentoCautela>div{display:flex;min-width:0;flex-direction:column;gap:3px}.itemRecebimentoCautela strong{color:#4d4232;font-size:12px}.itemRecebimentoCautela>div>span,.recebimentoIntegral{color:#857761;font-size:10px}.itemRecebimentoCautela label{width:145px;flex:none;margin:0!important}.itemRecebimentoCautela label input{width:100%}.recebimentoIntegral{padding:5px 7px;border-radius:6px;background:#edf1e8;color:#5f704d;font-weight:750}@media(max-width:650px){.secaoEquipamentosNovaCautela .listaEquipamentosCautela{grid-template-columns:1fr}.itemRecebimentoCautela{align-items:flex-start;flex-direction:column}.itemRecebimentoCautela label{width:100%}}
+
+.secaoEquipamentosNovaCautela .listaEquipamentosCautela{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:row dense}.materiaisRecebimentoCautela{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-height:260px;padding:8px;overflow-y:auto}.materiaisRecebimentoCautela h3{grid-column:1/-1;margin:0 0 3px}.itemRecebimentoCautela{min-width:0;min-height:54px;gap:7px;padding:6px 8px;border:1px solid #eee6da;border-radius:8px;background:#fdfcf9}.itemRecebimentoCautela:last-child{border-bottom:1px solid #eee6da}.itemRecebimentoCautela>div{gap:2px}.itemRecebimentoCautela strong{overflow:hidden;font-size:11px;text-overflow:ellipsis;white-space:nowrap}.itemRecebimentoCautela>div>span{font-size:9px;line-height:1.35}.itemRecebimentoCautela label{width:112px}.itemRecebimentoCautela label span{font-size:9px}.itemRecebimentoCautela label input{height:31px;padding:5px 7px}.recebimentoIntegral{padding:4px 6px;font-size:9px;white-space:nowrap}@media(max-width:900px){.secaoEquipamentosNovaCautela .listaEquipamentosCautela{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.secaoEquipamentosNovaCautela .listaEquipamentosCautela,.materiaisRecebimentoCautela{grid-template-columns:1fr}.itemRecebimentoCautela{align-items:center;flex-direction:row}.itemRecebimentoCautela label{width:105px}}
+
+#modalEditarCautela .janelaEditarCautela{width:min(1320px,calc(100vw - 28px))!important;max-height:calc(100vh - 24px)}#modalEditarCautela .corpoEdicaoCautela{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(330px,.85fr);align-items:stretch;gap:10px;max-height:calc(100vh - 155px);padding:10px;overflow-y:auto}#modalEditarCautela .corpoEdicaoCautela>.secaoEdicaoCautela{display:flex;min-height:0;flex-direction:column}#modalEditarCautela #dadosExternosEdicao,#modalEditarCautela .corpoEdicaoCautela>.secaoEdicaoCautela:nth-child(4){grid-column:1/-1}#modalEditarCautela .pesquisaEdicaoCautela{margin:9px 12px 2px}#modalEditarCautela .listaEdicaoCautela{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-content:start;gap:8px;max-height:480px;padding:7px 12px 12px;overflow-y:auto}#modalEditarCautela .listaEdicaoCautela .grupoEquipamentos{min-width:0;margin:0;padding:10px 12px}#modalEditarCautela .listaEdicaoCautela .grupoEquipamentos.aberto{grid-column:1/-1}#modalEditarCautela .listaEdicaoCautela .grupoEquipamentos h3{margin:0;font-size:13px}#modalEditarCautela .listaSelecionadosCautela{min-height:150px;max-height:480px;padding:7px 12px;overflow-y:auto}#modalEditarCautela .cabecalhoSecaoCautela{padding:10px 14px}#modalEditarCautela .itemEdicaoCautela{display:flex;align-items:center;gap:9px}#modalEditarCautela .vinculoMunicaoArma{margin-left:auto}@media(max-width:1050px){#modalEditarCautela .corpoEdicaoCautela{grid-template-columns:1fr}#modalEditarCautela #dadosExternosEdicao,#modalEditarCautela .corpoEdicaoCautela>.secaoEdicaoCautela:nth-child(4){grid-column:auto}#modalEditarCautela .listaEdicaoCautela{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){#modalEditarCautela .listaEdicaoCautela{grid-template-columns:1fr}}
+
+/* Blocos de identificação das tabelas de cautelas em aberto */
+.paginaCautelasAbertas{gap:24px}.blocoTipoCautela{overflow:hidden;border:1px solid #d8cfc1;border-radius:15px;background:#fff;box-shadow:0 9px 26px rgba(65,48,27,.09)}.cabecalhoTipoCautela{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0!important;padding:17px 20px;border:0!important;border-radius:0!important}.identificacaoTipoCautela{display:flex;align-items:center;gap:13px}.iconeTipoCautela{width:44px;height:44px;display:grid;place-items:center;flex:none;border-radius:11px;font-size:17px}.identificacaoTipoCautela small{display:block;margin-bottom:2px;font-size:8px;font-weight:900;letter-spacing:.13em}.cabecalhoTipoCautela h2{margin:0;font-size:18px}.cabecalhoTipoCautela p{margin:3px 0 0;font-size:11px}.seloTipoCautela{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;font-size:10px;font-weight:850;white-space:nowrap}.blocoTipoCautela .filtroTabelaCautelas{width:calc(100% - 36px);max-width:540px;margin:14px 18px 4px}.blocoTipoCautela .tabelaResponsiva{margin:10px 18px 18px;border-radius:10px}.blocoTipoCautela .tabela{margin-top:0}.cabecalhoTabelaTemporaria{background:linear-gradient(110deg,#edf5ef,#f9fcfa);border-bottom:1px solid #cbded0!important}.cabecalhoTabelaTemporaria .iconeTipoCautela,.cabecalhoTabelaTemporaria .seloTipoCautela{background:#d9eadf;color:#306044}.cabecalhoTabelaTemporaria small,.cabecalhoTabelaTemporaria h2{color:#365a43}.blocoCautelaTemporaria .tabelaResponsiva{border:2px solid #7f9c87}.blocoCautelaTemporaria .tabelaCaqui th{background:linear-gradient(180deg,#66816e,#4d6957)!important}.cabecalhoTabelaPermanente{background:linear-gradient(110deg,#f6f0e5,#fffaf1)}.cabecalhoTabelaPermanente .iconeTipoCautela,.cabecalhoTabelaPermanente .seloTipoCautela{background:#e7dbc5;color:#6b5430}.cabecalhoTabelaPermanente small,.cabecalhoTabelaPermanente h2{color:#665032}.cabecalhoTabelaExterna{background:linear-gradient(110deg,#f2edf6,#fcfaff)}.cabecalhoTabelaExterna .iconeTipoCautela,.cabecalhoTabelaExterna .seloTipoCautela{background:#e3dbea!important;color:#5f4b70}.cabecalhoTabelaExterna small,.cabecalhoTabelaExterna h2{color:#594766}@media(max-width:650px){.cabecalhoTipoCautela{align-items:flex-start;flex-direction:column}.seloTipoCautela{align-self:flex-start}.blocoTipoCautela .filtroTabelaCautelas,.blocoTipoCautela .tabelaResponsiva{width:auto;margin-left:10px;margin-right:10px}}
+/* Conferência completa dos itens antes da emissão da cautela */
+.modalConfirmarCautela .janelaModal{width:min(860px,calc(100vw - 30px))}.resumoEmissaoCautela{width:100%;margin-bottom:14px;overflow:hidden;border:1px solid #d8cbb7;border-radius:10px;background:#f8f4ed;text-align:left}.cabecalhoResumoEmissaoCautela{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 12px;border-bottom:1px solid #dfd5c6;background:#eee6d9}.cabecalhoResumoEmissaoCautela strong{color:#584a35;font-size:12px}.cabecalhoResumoEmissaoCautela span{padding:4px 8px;border-radius:999px;background:#6d7d58;color:#fff;font-size:10px;font-weight:800}.listaResumoEmissaoCautela{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-content:start;gap:6px;max-height:210px;overflow-y:auto;padding:7px;scrollbar-color:#a18e68 #eee8dd;scrollbar-width:thin}.itemResumoEmissaoCautela{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:7px;min-width:0;padding:7px 8px;border:1px solid #e2d8c8;border-radius:8px;background:#fff}.itemResumoEmissaoCautela:last-child{border-bottom:1px solid #e2d8c8}.itemResumoEmissaoCautela>div{display:flex;min-width:0;flex-direction:column;gap:2px}.itemResumoEmissaoCautela strong,.itemResumoEmissaoCautela span{overflow-wrap:anywhere}.itemResumoEmissaoCautela strong{color:#4d4232;font-size:10px;line-height:1.2}.itemResumoEmissaoCautela span{color:#82745f;font-size:8px;line-height:1.25}.itemResumoEmissaoCautela>b{flex:none;padding:4px 6px;border-radius:6px;background:#e8deca;color:#684f27;font-size:9px;white-space:nowrap}@media(max-width:760px){.listaResumoEmissaoCautela{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.listaResumoEmissaoCautela{grid-template-columns:1fr;max-height:230px}}
+
+/* Rolagem própria da tabela de histórico */
+.paginaHistorico .tabelaScrollHistorico{max-height:calc(100vh - 300px);min-height:260px;overflow:auto;border:1px solid #d8cbb8;border-radius:13px;background:#fff;box-shadow:0 8px 24px rgba(66,50,28,.09);scrollbar-color:#8b7652 #eee7dc;scrollbar-width:auto}
+.paginaHistorico .tabelaScrollHistorico .tabela{margin:0;border:0;border-radius:0;box-shadow:none}
+.paginaHistorico .tabelaScrollHistorico thead th{position:sticky;top:0;z-index:2}
+.paginaHistorico .tabelaScrollHistorico::-webkit-scrollbar{width:11px;height:11px}
+.paginaHistorico .tabelaScrollHistorico::-webkit-scrollbar-track{background:#eee7dc}
+.paginaHistorico .tabelaScrollHistorico::-webkit-scrollbar-thumb{border:2px solid #eee7dc;border-radius:10px;background:#8b7652}
+.paginaHistorico .tabelaScrollHistorico::-webkit-scrollbar-thumb:hover{background:#6e5c3f}
+@media(max-width:650px){.paginaHistorico .tabelaScrollHistorico{max-height:calc(100vh - 360px);min-height:220px}.paginaHistorico .tabelaScrollHistorico .tabela{min-width:700px}}
+
+/* Mantém um cartão completo visível e usa rolagem para os demais. */
+.paginaNovaCautela:not(.paginaCautelaExterna) .secaoSelecionadosNovaCautela .listaSelecionadosCautela{min-height:88px}
+
+/* O painel ocupa somente a área disponível; apenas a lista interna rola. */
+.paginaNovaCautela:not(.paginaCautelaExterna) .secaoSelecionadosNovaCautela{display:grid;height:100%;max-height:100%;min-height:0;grid-template-rows:auto minmax(88px,1fr) auto auto auto;overflow:hidden}
+.paginaNovaCautela:not(.paginaCautelaExterna) .secaoSelecionadosNovaCautela .listaSelecionadosCautela{min-height:88px;overflow-y:auto;overscroll-behavior:contain}
+.paginaNovaCautela:not(.paginaCautelaExterna) .secaoSelecionadosNovaCautela .equipamentoSelecionado{margin:4px 0;padding:7px 9px}
+.paginaNovaCautela:not(.paginaCautelaExterna) .secaoSelecionadosNovaCautela .equipamentoSelecionado button{padding:6px 9px}
+.paginaNovaCautela:not(.paginaCautelaExterna) .secaoSelecionadosNovaCautela .campoObservacaoCautela textarea{height:44px;min-height:44px}
+.paginaNovaCautela:not(.paginaCautelaExterna) .secaoSelecionadosNovaCautela .registroEmergencialCautela{padding:7px 10px}
