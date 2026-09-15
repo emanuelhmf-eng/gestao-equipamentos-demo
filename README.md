@@ -143,17 +143,27 @@ Para avaliação por recrutadores, o repositório oferece código-fonte, documen
 
 ## 🖥️ Interface da aplicação
 
+### Login
+![Login](docs/screenshots/login.png)
+
 ### Dashboard
 ![Dashboard](docs/screenshots/dashboard.png)
 
 ### Gestão de equipamentos
-![Equipamentos](docs/screenshots/03-equipamentos.png)
+![Equipamentos](docs/screenshots/menu-equipamentos.png)
+![Cadastro de Equipamentos](docs/screenshots/cadastro-equipamentos.png)
 
 ### Fluxo de cautela
-![Nova cautela](docs/screenshots/04-nova-cautela.png)
+![Menu cautela](docs/screenshots/menu-cautelas.png)
+![Cautela abertas](docs/screenshots/menu-cautelas-abertas.png)
 
-### Histórico e rastreabilidade
-![Histórico](docs/screenshots/06-historico.png)
+### Histórico e relatórios
+![Menu Histórico](docs/screenshots/historico.png)
+![Menu Relatórios](docs/screenshots/relatorios.png)
+![Relatórios](docs/screenshots/relatorio-cautelas.png)
+
+### Backup
+![Menu Backup](docs/screenshots/menu-backup.png)
 
 ## 📚 Principais aprendizados
 
