@@ -141,6 +141,20 @@ Este é um aplicativo **desktop Electron**, portanto não é executado diretamen
 
 Para avaliação por recrutadores, o repositório oferece código-fonte, documentação e instruções de execução local. Screenshots e um vídeo curto da versão demonstrativa podem ser adicionados ao portfólio.
 
+## 🖥️ Interface da aplicação
+
+### Dashboard
+![Dashboard](docs/screenshots/02-dashboard.png)
+
+### Gestão de equipamentos
+![Equipamentos](docs/screenshots/03-equipamentos.png)
+
+### Fluxo de cautela
+![Nova cautela](docs/screenshots/04-nova-cautela.png)
+
+### Histórico e rastreabilidade
+![Histórico](docs/screenshots/06-historico.png)
+
 ## 📚 Principais aprendizados
 
 - modelagem e persistência de dados com SQLite;
