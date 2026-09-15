@@ -139,7 +139,7 @@ O comando cria `publicacao/cautela-demo-<timestamp>` sem bancos, backups, logs, 
 
 Este é um aplicativo **desktop Electron**, portanto não é executado diretamente pelo GitHub Pages.
 
-Para avaliação por recrutadores, o repositório oferece código-fonte, documentação e instruções de execução local. Screenshots e um vídeo curto da versão demonstrativa podem ser adicionados ao portfólio.
+Para avaliação por recrutadores, o repositório oferece código-fonte, documentação e instruções de execução local. Screenshots e um vídeo curto da versão demonstrativa.
 
 ## 🖥️ Interface da aplicação
 
@@ -157,7 +157,7 @@ Para avaliação por recrutadores, o repositório oferece código-fonte, documen
 ![Menu cautela](docs/screenshots/menu-cautelas.png)
 ![Cautela abertas](docs/screenshots/menu-cautelas-abertas.png)
 
-### Histórico e relatórios
+### Histórico/Relatórios
 ![Menu Histórico](docs/screenshots/historico.png)
 ![Menu Relatórios](docs/screenshots/relatorios.png)
 ![Relatórios](docs/screenshots/relatorio-cautelas.png)
