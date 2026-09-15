@@ -144,7 +144,7 @@ Para avaliação por recrutadores, o repositório oferece código-fonte, documen
 ## 🖥️ Interface da aplicação
 
 ### Dashboard
-![Dashboard](docs/screenshots/painel.png)
+![Dashboard](docs/screenshots/dashboard.png)
 
 ### Gestão de equipamentos
 ![Equipamentos](docs/screenshots/03-equipamentos.png)
